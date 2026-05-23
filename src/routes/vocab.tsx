@@ -36,9 +36,16 @@ function VocabPage() {
             <h1 className="text-3xl font-bold text-slate-900 tracking-tight">143 Từ vựng Cốp pha</h1>
             <p className="text-slate-500 mt-2">Tổng hợp từ vựng thường gặp trong đề thi và công trường thực tế.</p>
           </div>
-          <Badge variant="outline" className="bg-white px-3 py-1.5 w-fit">
-            Tổng cộng {vocabularyList.length} từ
-          </Badge>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Button asChild className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold shadow-md shadow-indigo-200">
+              <Link to="/vocab-quiz">
+                Làm bài kiểm tra
+              </Link>
+            </Button>
+            <Badge variant="outline" className="bg-white px-3 py-1.5 w-fit h-fit self-start sm:self-center">
+              Tổng cộng {vocabularyList.length} từ
+            </Badge>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -59,7 +66,7 @@ function VocabPage() {
                     <Volume2 className="h-4 w-4" />
                   </Button>
                 </div>
-                
+
                 <div className="space-y-1">
                   <h3 className="text-xl font-bold font-jp text-slate-900">
                     {vocab.jp}

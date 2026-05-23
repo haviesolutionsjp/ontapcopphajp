@@ -9,11 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VocabQuizRouteImport } from './routes/vocab-quiz'
 import { Route as VocabRouteImport } from './routes/vocab'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ResultExamIdRouteImport } from './routes/result.$examId'
 import { Route as QuizExamIdRouteImport } from './routes/quiz.$examId'
 
+const VocabQuizRoute = VocabQuizRouteImport.update({
+  id: '/vocab-quiz',
+  path: '/vocab-quiz',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VocabRoute = VocabRouteImport.update({
   id: '/vocab',
   path: '/vocab',
@@ -38,12 +44,14 @@ const QuizExamIdRoute = QuizExamIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/vocab': typeof VocabRoute
+  '/vocab-quiz': typeof VocabQuizRoute
   '/quiz/$examId': typeof QuizExamIdRoute
   '/result/$examId': typeof ResultExamIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/vocab': typeof VocabRoute
+  '/vocab-quiz': typeof VocabQuizRoute
   '/quiz/$examId': typeof QuizExamIdRoute
   '/result/$examId': typeof ResultExamIdRoute
 }
@@ -51,26 +59,46 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/vocab': typeof VocabRoute
+  '/vocab-quiz': typeof VocabQuizRoute
   '/quiz/$examId': typeof QuizExamIdRoute
   '/result/$examId': typeof ResultExamIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/vocab' | '/quiz/$examId' | '/result/$examId'
+  fullPaths:
+    | '/'
+    | '/vocab'
+    | '/vocab-quiz'
+    | '/quiz/$examId'
+    | '/result/$examId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/vocab' | '/quiz/$examId' | '/result/$examId'
-  id: '__root__' | '/' | '/vocab' | '/quiz/$examId' | '/result/$examId'
+  to: '/' | '/vocab' | '/vocab-quiz' | '/quiz/$examId' | '/result/$examId'
+  id:
+    | '__root__'
+    | '/'
+    | '/vocab'
+    | '/vocab-quiz'
+    | '/quiz/$examId'
+    | '/result/$examId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   VocabRoute: typeof VocabRoute
+  VocabQuizRoute: typeof VocabQuizRoute
   QuizExamIdRoute: typeof QuizExamIdRoute
   ResultExamIdRoute: typeof ResultExamIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/vocab-quiz': {
+      id: '/vocab-quiz'
+      path: '/vocab-quiz'
+      fullPath: '/vocab-quiz'
+      preLoaderRoute: typeof VocabQuizRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/vocab': {
       id: '/vocab'
       path: '/vocab'
@@ -105,6 +133,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   VocabRoute: VocabRoute,
+  VocabQuizRoute: VocabQuizRoute,
   QuizExamIdRoute: QuizExamIdRoute,
   ResultExamIdRoute: ResultExamIdRoute,
 }
