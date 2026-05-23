@@ -75,6 +75,30 @@ function Index() {
             <h2 className="text-xl font-bold text-slate-900">Danh sách đề thi</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card className="group border-slate-200 hover:border-indigo-300 hover:shadow-xl hover:shadow-indigo-500/5 transition-all duration-300">
+              <CardHeader className="pb-4">
+                <div className="flex items-start justify-between mb-2">
+                  <div className="p-2 rounded-lg bg-indigo-50 transition-colors">
+                    <ListChecks className="w-5 h-5 text-indigo-600 transition-colors" />
+                  </div>
+                  <Badge variant="secondary" className="bg-indigo-100 text-indigo-700">
+                    143 từ
+                  </Badge>
+                </div>
+                <CardTitle className="text-xl group-hover:text-indigo-700 transition-colors">Từ vựng chuyên ngành</CardTitle>
+                <CardDescription className="line-clamp-2 min-h-[2.5rem]">
+                  Tổng hợp từ vựng thường gặp trong đề thi và công trường thực tế.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button asChild className="w-full bg-slate-900 hover:bg-indigo-600 text-white shadow-none transition-all duration-300">
+                  <Link to="/vocab">
+                    Học từ vựng
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
             {exams.map((e) => (
               <Card 
                 key={e.id} 
