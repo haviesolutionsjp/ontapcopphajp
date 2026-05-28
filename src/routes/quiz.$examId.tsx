@@ -228,6 +228,16 @@ function QuizPage() {
                     ))}
                   </div>
                 )}
+
+                {current!.image && (
+                  <figure className="rounded-2xl border border-slate-100 bg-slate-50/60 p-4 shadow-inner">
+                    <img
+                      src={current!.image.src}
+                      alt={current!.image.alt}
+                      className="mx-auto max-h-[340px] w-full object-contain mix-blend-multiply"
+                    />
+                  </figure>
+                )}
               </div>
 
               {/* Action Buttons */}

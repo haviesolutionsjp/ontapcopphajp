@@ -1,4 +1,8 @@
 export type Vocab = { jp: string; reading?: string; vi: string };
+export type QuestionImage = {
+  src: string;
+  alt: string;
+};
 export type Question = {
   id: number;
   jp: string;
@@ -7,6 +11,7 @@ export type Question = {
   vocab: Vocab[];
   answer: "O" | "X";
   explanation: string;
+  image?: QuestionImage;
 };
 export type Exam = {
   id: string;
@@ -24,7 +29,8 @@ const q = (
   vocab: Vocab[],
   answer: "O" | "X",
   explanation: string,
-): Question => ({ id, jp, romaji, vi, vocab, answer, explanation });
+  image?: QuestionImage,
+): Question => ({ id, jp, romaji, vi, vocab, answer, explanation, image });
 
 export const exams: Exam[] = [
   {
@@ -40,6 +46,10 @@ export const exams: Exam[] = [
         [{ jp: "さげふり", reading: "Sagefuri", vi: "Quả dọi / Dây dọi tâm" }],
         "O",
         "Hình minh họa hiển thị một quả cân hình nón treo bằng dây chuyên dụng dùng để căn chỉnh độ thẳng đứng.",
+        {
+          src: "/question-images/exam-1-q1-sagefuri.png",
+          alt: "Hình minh họa quả dọi Sagefuri",
+        },
       ),
       q(
         2,
@@ -289,6 +299,10 @@ export const exams: Exam[] = [
         ],
         "O",
         "Hình vẽ hiển thị chuẩn xác một cục côn nhựa dạng nón cụt có trục đầu ren vặn gia cố liên kết thanh ty.",
+        {
+          src: "/question-images/exam-2-q1-pkon.png",
+          alt: "Hình minh họa cục côn nhựa P-kon",
+        },
       ),
       q(
         2,
@@ -526,6 +540,10 @@ export const exams: Exam[] = [
         [{ jp: "セパレータ", reading: "Separēta", vi: "Thanh ty ren" }],
         "O",
         "Hình vẽ minh họa rõ ràng kết cấu thanh trục ty ren thép vách tường có ren cánh bướm gá khoảng cách tường cốp pha.",
+        {
+          src: "/question-images/exam-3-q1-separator.png",
+          alt: "Hình minh họa thanh ty ren Separēta",
+        },
       ),
       q(
         2,
@@ -535,6 +553,10 @@ export const exams: Exam[] = [
         [{ jp: "しんずみ", reading: "Shinzumi", vi: "Đường mực trục tim trung tâm kết cấu" }],
         "O",
         "Ký hiệu hình chéo gạch giao cắt dọc ngang có mũi tên là biểu tượng mốc tim trục trung tâm cấu kiện chịu lực.",
+        {
+          src: "/question-images/exam-3-q2-shinzumi.png",
+          alt: "Hình minh họa đường mực tim Shinzumi",
+        },
       ),
       q(
         3,
@@ -562,6 +584,10 @@ export const exams: Exam[] = [
         ],
         "O",
         "Hình ảnh minh họa chính xác là khung thép chữ H tiêu chuẩn của hệ giàn giáo khung phổ biến.",
+        {
+          src: "/question-images/exam-3-q4-wakugumi-ashiba.png",
+          alt: "Hình minh họa bộ phận giàn giáo khung",
+        },
       ),
       q(
         5,
@@ -797,6 +823,10 @@ export const exams: Exam[] = [
         [{ jp: "わくぐみあしば", reading: "Wakugumi ashiba", vi: "Giàn giáo khung" }],
         "O",
         "Hình vẽ chính xác là khung giàn giáo kết cấu chữ H tiêu chuẩn.",
+        {
+          src: "/question-images/exam-4-q4-wakugumi-ashiba.png",
+          alt: "Hình minh họa giàn giáo khung Wakugumi ashiba",
+        },
       ),
       q(
         5,
@@ -1009,6 +1039,10 @@ export const exams: Exam[] = [
         ],
         "O",
         "Hình vẽ minh họa chính xác là cây cờ lê đuôi chuột gạt tạch chuyên dụng của thợ giàn giáo.",
+        {
+          src: "/question-images/exam-5-q1-ratchet-wrench.png",
+          alt: "Hình minh họa cờ lê tự động Ratchet wrench",
+        },
       ),
       q(
         2,
@@ -1229,6 +1263,10 @@ export const exams: Exam[] = [
         [{ jp: "フォームタイ", reading: "Fōmutai", vi: "Khóa kẹp ty ren ngoài ván khuôn" }],
         "O",
         "Hình vẽ minh họa chính xác là khóa kẹp (Formtie) dùng để gắn kết với thanh ty ren và siết chặt ống tuýp thép bên ngoài cốp pha.",
+        {
+          src: "/question-images/exam-6-q1-formtie.png",
+          alt: "Hình minh họa khóa kẹp Formtie",
+        },
       ),
       q(
         2,
@@ -1238,6 +1276,10 @@ export const exams: Exam[] = [
         [{ jp: "ねがらみクランプ", reading: "Negarami kuranpu", vi: "Kẹp dầm giằng chân chống" }],
         "O",
         "Hình vẽ minh họa chính xác thiết bị kẹp giằng dùng để khóa các ống thép chân chống ở gần sát mặt nền, chống xê dịch.",
+        {
+          src: "/question-images/exam-6-q2-negarami-clamp.png",
+          alt: "Hình minh họa kẹp giằng chân Negarami clamp",
+        },
       ),
       q(
         3,
@@ -1259,6 +1301,10 @@ export const exams: Exam[] = [
         [{ jp: "わくぐみあしば", reading: "Wakugumi ashiba", vi: "Giàn giáo khung" }],
         "O",
         "Hình vẽ minh họa khung kết cấu chữ H tiêu chuẩn của hệ thống giàn giáo khung (Wakugumi ashiba) phổ biến.",
+        {
+          src: "/question-images/exam-6-q4-wakugumi-ashiba.png",
+          alt: "Hình minh họa giàn giáo khung Wakugumi ashiba",
+        },
       ),
       q(
         5,

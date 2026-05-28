@@ -169,6 +169,16 @@ function ResultPage() {
                         </Button>
                       </div>
 
+                      {q.image && (
+                        <figure className="rounded-2xl border border-slate-100 bg-slate-50/60 p-4 shadow-inner">
+                          <img
+                            src={q.image.src}
+                            alt={q.image.alt}
+                            className="mx-auto max-h-[280px] w-full object-contain mix-blend-multiply"
+                          />
+                        </figure>
+                      )}
+
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div className={`p-4 rounded-xl border flex flex-col justify-center space-y-1 ${
                           isCorrect ? "bg-green-50 border-green-100" : "bg-red-50 border-red-100"
