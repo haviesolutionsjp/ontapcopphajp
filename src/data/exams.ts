@@ -1261,7 +1261,7 @@ export const exams: Exam[] = [
         "Kore wa fōmutai desu.",
         "Đây là khóa kẹp (Formtie).",
         [{ jp: "フォームタイ", reading: "Fōmutai", vi: "Khóa kẹp ty ren ngoài ván khuôn" }],
-        "O",
+        "X",
         "Hình vẽ minh họa chính xác là khóa kẹp (Formtie) dùng để gắn kết với thanh ty ren và siết chặt ống tuýp thép bên ngoài cốp pha.",
         {
           src: "/question-images/exam-6-q1-formtie.png",
