@@ -261,7 +261,7 @@ function VocabPage() {
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div className="space-y-2">
             <h1 className="text-3xl font-bold tracking-tight text-slate-900">
-              143 Từ vựng Cốp pha
+              {vocabularyList.length} Từ vựng Cốp pha
             </h1>
             <p className="max-w-2xl text-slate-500">
               Xem danh sách hoặc học bằng flashcard lặp lại ngắt quãng, với tiến độ lưu lại trên máy
