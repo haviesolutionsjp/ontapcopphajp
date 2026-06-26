@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
+import { Switch } from "@/components/ui/switch";
 import { Clock, Volume2, ArrowRight, ArrowLeft, Check, X, Home } from "lucide-react";
 import { speakJa, stopSpeak } from "@/lib/tts";
 import { useCountdown } from "@/hooks/useCountdown";
@@ -26,6 +27,8 @@ function QuizPage() {
   const [answers, setAnswers] = useState<Array<"O" | "X" | null>>(() =>
     exam ? exam.questions.map(() => null) : [],
   );
+  const [showVocabulary, setShowVocabulary] = useState<Record<number, boolean>>({});
+  const [showTranslation, setShowTranslation] = useState<Record<number, boolean>>({});
 
   const finish = useCallback(
     (finalAnswers: Array<"O" | "X" | null>) => {
@@ -110,7 +113,7 @@ function QuizPage() {
               <h1 className="text-3xl font-extrabold text-slate-900">{exam.title}</h1>
               {exam.subtitle && <p className="text-slate-500 font-medium">{exam.subtitle}</p>}
             </div>
-            
+
             <div className="grid grid-cols-2 gap-4">
               <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
                 <div className="text-xs font-bold text-slate-400 uppercase mb-1">Số câu hỏi</div>
@@ -155,193 +158,245 @@ function QuizPage() {
 
   const progressPct = ((idx + (currentAnswered ? 1 : 0)) / total) * 100;
   const isTimeCritical = countdown.remaining < 60;
+  const isVocabularyVisible = showVocabulary[current!.id] ?? false;
+  const isTranslationVisible = showTranslation[current!.id] ?? false;
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
-      {/* Sleek Progress Header */}
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div className="max-w-4xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center gap-3">
-              <Button asChild variant="ghost" size="icon" className="text-slate-400 hover:text-slate-600 -ml-2">
-                <Link to="/">
-                  <Home className="w-5 h-5" />
-                </Link>
-              </Button>
-              <div>
-                <span className="text-xs font-bold text-indigo-600 uppercase tracking-wider block mb-0.5">Tiến độ làm bài</span>
-                <span className="text-sm font-bold text-slate-900">Câu {idx + 1} <span className="text-slate-400 font-medium">/ {total}</span></span>
-              </div>
+      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white">
+        <div className="mx-auto flex max-w-3xl items-center justify-between gap-4 px-4 py-3">
+          <Button asChild variant="ghost" size="icon" className="-ml-2 text-slate-500">
+            <Link to="/">
+              <Home className="h-5 w-5" />
+            </Link>
+          </Button>
+          <div className="min-w-0 text-center">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+              Câu {idx + 1} / {total}
             </div>
-            
-            <div className={`flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-500 ${
-              isTimeCritical ? "bg-red-50 border-red-200 text-red-600 animate-pulse" : "bg-slate-50 border-slate-100 text-slate-700"
-            }`}>
-              <Clock className={`w-4 h-4 ${isTimeCritical ? "text-red-500" : "text-slate-400"}`} />
-              <span className="font-mono font-bold text-lg">{countdown.label}</span>
-            </div>
+            <div className="font-mono text-sm font-semibold text-slate-700">{countdown.label}</div>
           </div>
-          <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
-            <div 
-              className="h-full bg-indigo-600 transition-all duration-500 ease-out"
-              style={{ width: `${progressPct}%` }}
-            />
+          <div
+            className={`flex items-center gap-2 text-sm font-medium ${
+              isTimeCritical ? "text-red-600" : "text-slate-600"
+            }`}
+          >
+            <Clock className={`h-4 w-4 ${isTimeCritical ? "text-red-500" : "text-slate-400"}`} />
+            {isTimeCritical ? "Sắp hết giờ" : "Đang làm"}
           </div>
+        </div>
+        <div className="h-1 w-full bg-slate-100">
+          <div
+            className="h-full bg-slate-900 transition-all duration-300"
+            style={{ width: `${progressPct}%` }}
+          />
         </div>
       </header>
 
-      <main className="flex-1 max-w-3xl mx-auto w-full px-4 py-8 sm:py-12">
-        <Card className="border-none shadow-xl shadow-slate-200/50 overflow-hidden bg-white">
-          <CardContent className="p-0">
-            {/* Question Area */}
-            <div className="p-8 sm:p-12 space-y-8">
-              <div className="space-y-6">
-                <div className="flex justify-between items-start">
-                  <div className="space-y-4 flex-1">
-                    <h2 className="font-jp text-3xl sm:text-4xl lg:text-5xl leading-tight text-slate-900 tracking-tight">
-                      <HighlightedJa jp={current!.jp} vocab={current!.vocab} />
-                    </h2>
-                    <p className="text-lg text-slate-400 font-medium italic tracking-wide">{current!.romaji}</p>
+      <main className="flex-1 mx-auto w-full max-w-3xl px-4 py-6 sm:py-8">
+        <section className="space-y-6 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
+          <div className="space-y-4">
+            <div className="flex items-start justify-between gap-4">
+              <div className="min-w-0 space-y-2">
+                <h2 className="font-jp text-2xl sm:text-3xl lg:text-4xl leading-snug text-slate-900">
+                  <HighlightedJa jp={current!.jp} vocab={current!.vocab} />
+                </h2>
+                <p className="text-sm sm:text-base text-slate-500">{current!.romaji}</p>
+              </div>
+              <Button
+                size="icon"
+                variant="outline"
+                className="h-10 w-10 shrink-0 border-slate-200 text-slate-500"
+                onClick={() => speakJa(current!.jp)}
+              >
+                <Volume2 className="h-4 w-4" />
+              </Button>
+            </div>
+
+            <div className="space-y-3 border-t border-slate-100 pt-4">
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <div className="text-sm font-medium text-slate-900">Bản dịch tiếng Việt</div>
+                  <div className="text-xs text-slate-500">Mặc định tắt</div>
+                </div>
+                <Switch
+                  checked={isTranslationVisible}
+                  onCheckedChange={(checked) =>
+                    setShowTranslation((prev) => ({
+                      ...prev,
+                      [current!.id]: checked,
+                    }))
+                  }
+                  aria-label="Bật hoặc tắt bản dịch tiếng Việt của câu hiện tại"
+                />
+              </div>
+              {isTranslationVisible && (
+                <p className="text-base sm:text-lg leading-relaxed text-slate-700">{current!.vi}</p>
+              )}
+            </div>
+
+            {current!.vocab.length > 0 && (
+              <div className="space-y-3 border-t border-slate-100 pt-4">
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <div className="text-sm font-medium text-slate-900">Từ vựng trong câu</div>
+                    <div className="text-xs text-slate-500">Mặc định tắt</div>
                   </div>
-                  <Button
-                    size="icon"
-                    variant="secondary"
-                    className="h-12 w-12 rounded-2xl bg-slate-100 text-slate-600 hover:bg-indigo-600 hover:text-white transition-all shadow-none shrink-0 ml-4"
-                    onClick={() => speakJa(current!.jp)}
-                  >
-                    <Volume2 className="w-6 h-6" />
-                  </Button>
+                  <Switch
+                    checked={isVocabularyVisible}
+                    onCheckedChange={(checked) =>
+                      setShowVocabulary((prev) => ({
+                        ...prev,
+                        [current!.id]: checked,
+                      }))
+                    }
+                    aria-label="Bật hoặc tắt từ vựng của câu hiện tại"
+                  />
                 </div>
 
-                {/* Vocabulary Tags */}
-                {current!.vocab.length > 0 && (
-                  <div className="flex flex-wrap gap-2 pt-2">
+                {isVocabularyVisible && (
+                  <div className="flex flex-wrap gap-2">
                     {current!.vocab.map((v, vi) => (
                       <button
                         key={vi}
                         onClick={() => speakJa(v.jp)}
-                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-100 text-slate-600 hover:border-indigo-200 hover:bg-indigo-50 transition-all text-sm group"
+                        className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-700 transition-colors hover:border-slate-300 hover:bg-slate-100"
                       >
-                        <span className="font-jp font-bold">{v.jp}</span>
-                        <span className="text-slate-400 group-hover:text-indigo-400">{v.vi}</span>
+                        <span className="font-jp font-medium">{v.jp}</span>
+                        <span className="text-slate-500">{v.vi}</span>
                       </button>
                     ))}
                   </div>
                 )}
+              </div>
+            )}
 
-                {current!.image && (
-                  <figure className="rounded-2xl border border-slate-100 bg-slate-50/60 p-4 shadow-inner">
-                    <img
-                      src={current!.image.src}
-                      alt={current!.image.alt}
-                      className="mx-auto max-h-[340px] w-full object-contain mix-blend-multiply"
-                    />
-                  </figure>
-                )}
+            {current!.image && (
+              <figure className="border-t border-slate-100 pt-4">
+                <img
+                  src={current!.image.src}
+                  alt={current!.image.alt}
+                  className="mx-auto max-h-[320px] w-full object-contain"
+                />
+              </figure>
+            )}
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 pt-2 sm:gap-6">
+            <Button
+              size="lg"
+              variant={answers[idx] === "O" ? "default" : "outline"}
+              className={`h-28 sm:h-36 rounded-[1.5rem] border-2 px-4 transition-all ${
+                answers[idx] === "O"
+                  ? "border-emerald-500 bg-emerald-400 text-white shadow-[0_18px_35px_-18px_rgba(16,185,129,0.55)]"
+                  : "border-slate-100 bg-white text-slate-300 shadow-[0_10px_24px_-18px_rgba(15,23,42,0.35)] hover:border-slate-200 hover:bg-slate-50"
+              } ${currentAnswered && answers[idx] !== "O" ? "opacity-50" : ""}`}
+              onClick={() => answer("O")}
+              disabled={currentAnswered}
+            >
+              <div className="flex h-full flex-col items-center justify-center gap-3">
+                <span className="text-4xl sm:text-5xl leading-none font-normal">○</span>
+                <span className="text-sm sm:text-base font-extrabold uppercase tracking-[0.2em]">
+                  Đúng
+                </span>
+              </div>
+            </Button>
+            <Button
+              size="lg"
+              variant={answers[idx] === "X" ? "default" : "outline"}
+              className={`h-28 sm:h-36 rounded-[1.5rem] border-2 px-4 transition-all ${
+                answers[idx] === "X"
+                  ? "border-rose-500 bg-rose-400 text-white shadow-[0_18px_35px_-18px_rgba(244,63,94,0.55)]"
+                  : "border-slate-100 bg-white text-slate-300 shadow-[0_10px_24px_-18px_rgba(15,23,42,0.35)] hover:border-slate-200 hover:bg-slate-50"
+              } ${currentAnswered && answers[idx] !== "X" ? "opacity-50" : ""}`}
+              onClick={() => answer("X")}
+              disabled={currentAnswered}
+            >
+              <div className="flex h-full flex-col items-center justify-center gap-3">
+                <span className="text-4xl sm:text-5xl leading-none font-normal">×</span>
+                <span className="text-sm sm:text-base font-extrabold uppercase tracking-[0.2em]">
+                  Sai
+                </span>
+              </div>
+            </Button>
+          </div>
+        </section>
+
+        {currentAnswered && (
+          <section
+            className={`mt-4 rounded-2xl border p-4 sm:p-5 ${
+              answers[idx] === current!.answer
+                ? "border-emerald-100 bg-emerald-50/60"
+                : "border-rose-100 bg-rose-50/60"
+            }`}
+          >
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              <div className="flex items-start gap-3">
+                <div
+                  className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-white ${
+                    answers[idx] === current!.answer ? "bg-emerald-500" : "bg-rose-500"
+                  }`}
+                >
+                  {answers[idx] === current!.answer ? (
+                    <Check className="h-3.5 w-3.5" />
+                  ) : (
+                    <X className="h-3.5 w-3.5" />
+                  )}
+                </div>
+                <div className="space-y-1">
+                  <div
+                    className={`text-sm font-semibold ${
+                      answers[idx] === current!.answer ? "text-emerald-700" : "text-rose-700"
+                    }`}
+                  >
+                    {answers[idx] === current!.answer ? "Đáp án đúng" : "Đáp án sai"}
+                  </div>
+                  <p className="text-sm leading-relaxed text-slate-600">{current!.explanation}</p>
+                </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className="grid grid-cols-2 gap-4 sm:gap-6 pt-4">
+              <div className="flex gap-2">
                 <Button
-                  size="lg"
-                  variant={answers[idx] === "O" ? "default" : "outline"}
-                  className={`h-24 sm:h-32 text-2xl font-black rounded-3xl transition-all border-2 ${
-                    answers[idx] === "O" 
-                      ? "bg-green-600 border-green-600 text-white shadow-lg shadow-green-100" 
-                      : "border-slate-100 text-slate-400 hover:border-green-200 hover:text-green-600 hover:bg-green-50"
-                  } ${currentAnswered && answers[idx] !== "O" ? "opacity-40" : ""}`}
-                  onClick={() => answer("O")}
-                  disabled={currentAnswered}
+                  variant="outline"
+                  onClick={goPrev}
+                  disabled={idx === 0}
+                  className="h-11 rounded-full border-slate-200 px-4 text-slate-500 shadow-sm"
                 >
-                  <div className="flex flex-col items-center gap-2">
-                    <span className="text-4xl sm:text-5xl">○</span>
-                    <span className="text-sm font-bold uppercase tracking-widest">ĐÚNG</span>
-                  </div>
+                  <ArrowLeft className="h-4 w-4" />
                 </Button>
                 <Button
-                  size="lg"
-                  variant={answers[idx] === "X" ? "default" : "outline"}
-                  className={`h-24 sm:h-32 text-2xl font-black rounded-3xl transition-all border-2 ${
-                    answers[idx] === "X" 
-                      ? "bg-red-600 border-red-600 text-white shadow-lg shadow-red-100" 
-                      : "border-slate-100 text-slate-400 hover:border-red-200 hover:text-red-600 hover:bg-red-50"
-                  } ${currentAnswered && answers[idx] !== "X" ? "opacity-40" : ""}`}
-                  onClick={() => answer("X")}
-                  disabled={currentAnswered}
+                  onClick={goNext}
+                  className="h-11 rounded-full bg-slate-950 px-5 text-white shadow-sm hover:bg-slate-900"
                 >
-                  <div className="flex flex-col items-center gap-2">
-                    <span className="text-4xl sm:text-5xl">×</span>
-                    <span className="text-sm font-bold uppercase tracking-widest">SAI</span>
-                  </div>
+                  {idx + 1 >= total ? "Xem kết quả" : "Câu tiếp theo"}
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
             </div>
-
-            {/* Feedback & Navigation */}
-            {currentAnswered && (
-              <div className={`p-8 animate-in slide-in-from-bottom-4 duration-500 border-t ${
-                answers[idx] === current!.answer ? "bg-green-50/50 border-green-100" : "bg-red-50/50 border-red-100"
-              }`}>
-                <div className="space-y-6">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className={`p-1.5 rounded-full ${answers[idx] === current!.answer ? "bg-green-600 text-white" : "bg-red-600 text-white"}`}>
-                        {answers[idx] === current!.answer ? <Check className="w-4 h-4" /> : <X className="w-4 h-4" />}
-                      </div>
-                      <span className={`font-bold text-lg ${answers[idx] === current!.answer ? "text-green-800" : "text-red-800"}`}>
-                        {answers[idx] === current!.answer ? "Câu trả lời chính xác" : "Rất tiếc, bạn đã chọn sai"}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Button
-                        variant="outline"
-                        onClick={goPrev}
-                        disabled={idx === 0}
-                        className="bg-white hover:bg-slate-50 text-slate-600 px-4 h-12 rounded-2xl font-bold border-slate-200 transition-all shadow-sm"
-                      >
-                        <ArrowLeft className="w-4 h-4" />
-                      </Button>
-                      <Button 
-                        onClick={goNext}
-                        className="bg-slate-900 hover:bg-indigo-600 text-white px-6 h-12 rounded-2xl font-bold transition-all shadow-lg shadow-slate-200 group"
-                      >
-                        {idx + 1 >= total ? "Xem kết quả" : "Câu tiếp theo"}
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm space-y-3">
-                    <div className="text-xs font-black text-slate-400 uppercase tracking-widest">Giải thích chi tiết</div>
-                    <p className="text-slate-700 leading-relaxed text-base">
-                      {current!.explanation}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )}
-          </CardContent>
-        </Card>
+          </section>
+        )}
 
         {!currentAnswered && (
-          <div className="mt-8 flex items-center justify-between px-2">
+          <div className="mt-4 flex items-center justify-between gap-3">
             <Button
               variant="outline"
               onClick={goPrev}
               disabled={idx === 0}
-              className="text-slate-500 font-medium h-12 px-6 rounded-xl border-slate-200 bg-white hover:bg-slate-50"
+              className="h-10 border-slate-200 px-4 text-slate-600"
             >
-              <ArrowLeft className="w-4 h-4 mr-2" /> Câu trước
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Câu trước
             </Button>
-            <div className="text-center text-slate-400 text-sm font-medium animate-pulse hidden sm:block">
-              Vui lòng chọn ○ hoặc ×
+            <div className="hidden text-sm text-slate-400 sm:block">
+              Chọn Đúng hoặc Sai để tiếp tục
             </div>
             <Button
               variant="outline"
               onClick={goNext}
-              className="text-slate-500 font-medium h-12 px-6 rounded-xl border-slate-200 bg-white hover:bg-slate-50"
+              className="h-10 border-slate-200 px-4 text-slate-600"
             >
-              {idx + 1 >= total ? "Nộp bài" : "Câu sau"} <ArrowRight className="w-4 h-4 ml-2" />
+              {idx + 1 >= total ? "Nộp bài" : "Câu sau"}
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
         )}
