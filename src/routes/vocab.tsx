@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import type { TouchEvent as ReactTouchEvent } from "react";
 import { vocabularyList } from "@/data/vocab";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -7,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeft, BookOpen, Check, RotateCcw, Shuffle, Volume2, X } from "lucide-react";
 import { speakJa } from "@/lib/tts";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export const Route = createFileRoute("/vocab")({
   head: () => ({
@@ -24,6 +26,8 @@ type FlashcardProgress = {
 
 const FLASHCARD_STORAGE_KEY = "ontapcoppha:vocab-flashcards:v1";
 const SESSION_DELAY = 2;
+const SWIPE_THRESHOLD = 80;
+const SWIPE_LOCK_MS = 400;
 
 function shuffle<T>(array: T[]) {
   const next = [...array];
@@ -113,12 +117,19 @@ function nextReviewLabel(timestamp: number) {
 }
 
 function VocabPage() {
+  const isMobile = useIsMobile();
   const initialProgress = useMemo(() => loadFlashcardProgress(), []);
   const [flashProgress, setFlashProgress] = useState<Record<number, FlashcardProgress>>(
     () => initialProgress,
   );
   const [sessionDeck, setSessionDeck] = useState(() => buildSessionDeck(initialProgress));
   const [showAnswer, setShowAnswer] = useState(false);
+  const [swipeOffset, setSwipeOffset] = useState(0);
+  const [isSwiping, setIsSwiping] = useState(false);
+  const touchStartRef = useRef({ x: 0, y: 0 });
+  const swipeOffsetRef = useRef(0);
+  const swipeLockedUntilRef = useRef(0);
+  const swipeTrackingRef = useRef(false);
 
   useEffect(() => {
     saveFlashcardProgress(flashProgress);
@@ -128,9 +139,17 @@ function VocabPage() {
   const currentCard = sessionDeck[0];
   const currentProgress = currentCard ? flashProgress[currentCard.id] : undefined;
 
+  const resetSwipeState = () => {
+    swipeTrackingRef.current = false;
+    swipeOffsetRef.current = 0;
+    setSwipeOffset(0);
+    setIsSwiping(false);
+  };
+
   const restartSession = () => {
     setSessionDeck(buildSessionDeck(flashProgress));
     setShowAnswer(false);
+    resetSwipeState();
   };
 
   const clearProgress = () => {
@@ -140,6 +159,7 @@ function VocabPage() {
     setFlashProgress({});
     setSessionDeck(shuffle(vocabularyList));
     setShowAnswer(false);
+    resetSwipeState();
   };
 
   const gradeCurrent = (grade: ReviewGrade) => {
@@ -160,6 +180,61 @@ function VocabPage() {
       delayed.splice(insertAt, 0, currentCard);
       return delayed;
     });
+    resetSwipeState();
+  };
+
+  const handleCardTouchStart = (event: ReactTouchEvent<HTMLButtonElement>) => {
+    if (!isMobile || !currentCard) return;
+
+    const touch = event.touches[0];
+    if (!touch) return;
+
+    touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+    swipeTrackingRef.current = true;
+    swipeOffsetRef.current = 0;
+    setSwipeOffset(0);
+    setIsSwiping(false);
+  };
+
+  const handleCardTouchMove = (event: ReactTouchEvent<HTMLButtonElement>) => {
+    if (!isMobile || !swipeTrackingRef.current || !currentCard) return;
+
+    const touch = event.touches[0];
+    if (!touch) return;
+
+    const deltaX = touch.clientX - touchStartRef.current.x;
+    const deltaY = touch.clientY - touchStartRef.current.y;
+
+    if (Math.abs(deltaX) <= Math.abs(deltaY)) return;
+
+    if (Math.abs(deltaX) > 8) {
+      event.preventDefault();
+      setIsSwiping(true);
+      swipeOffsetRef.current = Math.max(-120, Math.min(120, deltaX));
+      setSwipeOffset(Math.max(-120, Math.min(120, deltaX)));
+    }
+  };
+
+  const handleCardTouchEnd = () => {
+    if (!isMobile || !swipeTrackingRef.current || !currentCard) return;
+
+    if (Math.abs(swipeOffsetRef.current) >= SWIPE_THRESHOLD) {
+      swipeLockedUntilRef.current = Date.now() + SWIPE_LOCK_MS;
+      gradeCurrent(swipeOffsetRef.current > 0 ? "good" : "again");
+    }
+
+    resetSwipeState();
+  };
+
+  const handleCardTouchCancel = () => {
+    if (!isMobile) return;
+
+    resetSwipeState();
+  };
+
+  const handleCardClick = () => {
+    if (Date.now() < swipeLockedUntilRef.current) return;
+    setShowAnswer((prev) => !prev);
   };
 
   return (
@@ -249,12 +324,25 @@ function VocabPage() {
                     <>
                       <button
                         type="button"
-                        onClick={() => setShowAnswer((prev) => !prev)}
+                        onClick={handleCardClick}
+                        onTouchStart={handleCardTouchStart}
+                        onTouchMove={handleCardTouchMove}
+                        onTouchEnd={handleCardTouchEnd}
+                        onTouchCancel={handleCardTouchCancel}
                         className={`flex min-h-[18rem] w-full flex-col items-center justify-center rounded-3xl border px-6 py-8 text-center shadow-sm transition-colors ${
                           showAnswer
                             ? "border-emerald-100 bg-emerald-50/70"
                             : "border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50"
                         }`}
+                        style={{
+                          transform: isMobile
+                            ? `translateX(${swipeOffset}px) rotate(${swipeOffset / 40}deg)`
+                            : undefined,
+                          transition: isSwiping
+                            ? "none"
+                            : "transform 180ms ease, border-color 180ms ease, background-color 180ms ease",
+                          touchAction: isMobile ? "pan-y" : undefined,
+                        }}
                       >
                         {showAnswer ? (
                           <>
