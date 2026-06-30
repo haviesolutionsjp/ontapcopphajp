@@ -1,12 +1,26 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { TouchEvent as ReactTouchEvent } from "react";
+import { exams, type Question, type Vocab as ExamVocab } from "@/data/exams";
 import { vocabularyList } from "@/data/vocab";
+import { HighlightedJa } from "@/lib/highlight";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Separator } from "@/components/ui/separator";
+import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowLeft, BookOpen, Check, RotateCcw, Shuffle, Volume2, X } from "lucide-react";
+import {
+  ArrowLeft,
+  BookOpen,
+  Check,
+  ChevronDown,
+  RotateCcw,
+  Shuffle,
+  Volume2,
+  X,
+} from "lucide-react";
 import { speakJa } from "@/lib/tts";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -22,6 +36,12 @@ type FlashcardProgress = {
   intervalMinutes: number;
   nextReviewAt: number;
   streak: number;
+};
+type RelatedQuestion = {
+  examId: string;
+  examTitle: string;
+  question: Question;
+  matchedVocab: ExamVocab[];
 };
 
 const FLASHCARD_STORAGE_KEY = "ontapcoppha:vocab-flashcards:v1";
@@ -116,9 +136,155 @@ function nextReviewLabel(timestamp: number) {
   return `Sau ${Math.round(hours / 24)} ngày`;
 }
 
+function normalizeTerm(text: string) {
+  return text
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/[()\[\]{}<>。、，,./\\・〜~\-_\s]/g, "");
+}
+
+function normalizeQuestionText(text: string) {
+  return text.normalize("NFKC").replace(/\s+/g, " ").trim();
+}
+
+function buildSearchKeys(text: string) {
+  const keys = new Set<string>();
+  const trimmed = text.trim();
+  if (!trimmed) return keys;
+
+  const base = normalizeTerm(trimmed);
+  if (base) keys.add(base);
+
+  const withoutParentheses = trimmed.replace(/[（(].*?[)）]/g, " ").trim();
+  if (withoutParentheses) {
+    const key = normalizeTerm(withoutParentheses);
+    if (key) keys.add(key);
+  }
+
+  const parentheticalMatches = [...trimmed.matchAll(/[（(]([^()（）]+)[)）]/g)];
+  for (const match of parentheticalMatches) {
+    const key = normalizeTerm(match[1] ?? "");
+    if (key) keys.add(key);
+  }
+
+  for (const part of trimmed.split(/[\/／、,，;；|]/)) {
+    const key = normalizeTerm(part);
+    if (key) keys.add(key);
+  }
+
+  return [...keys];
+}
+
+function isRelatedTerm(vocabText: string, questionTerm: string) {
+  const vocabKeys = buildSearchKeys(vocabText);
+  const questionKeys = buildSearchKeys(questionTerm);
+  const vocabSet = new Set(vocabKeys);
+  const questionSet = new Set(questionKeys);
+
+  for (const key of vocabSet) {
+    if (questionSet.has(key)) return true;
+  }
+  return false;
+}
+
+function RelatedQuestionRow({
+  item,
+  showVietnamese,
+}: {
+  item: RelatedQuestion;
+  showVietnamese: boolean;
+}) {
+  const matchedHighlight = item.matchedVocab.length > 0 ? item.matchedVocab : item.question.vocab;
+
+  return (
+    <div className="rounded-2xl border border-slate-200 bg-white/90 p-4 shadow-sm shadow-slate-100">
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <div className="flex flex-wrap items-center gap-2">
+            <Badge variant="outline" className="border-slate-200 bg-slate-50 text-slate-500">
+              {item.examTitle}
+            </Badge>
+            <Badge
+              variant={item.question.answer === "O" ? "secondary" : "outline"}
+              className={
+                item.question.answer === "O"
+                  ? "border-emerald-100 bg-emerald-50 text-emerald-700"
+                  : "border-rose-100 bg-rose-50 text-rose-700"
+              }
+            >
+              Câu {item.question.id}
+            </Badge>
+          </div>
+          <div className="mt-3 space-y-1">
+            <p className="font-jp text-[15px] font-semibold leading-relaxed text-slate-900">
+              <HighlightedJa jp={item.question.jp} vocab={matchedHighlight} />
+            </p>
+            <p className="text-sm text-slate-500">{item.question.romaji}</p>
+            {showVietnamese && (
+              <div className="rounded-xl border border-slate-100 bg-slate-50 px-3 py-2 text-sm leading-relaxed text-slate-700">
+                {item.question.vi}
+              </div>
+            )}
+          </div>
+        </div>
+
+        <Button
+          variant="ghost"
+          size="icon"
+          className="h-8 w-8 shrink-0 text-slate-400 hover:bg-slate-50 hover:text-slate-700"
+          onClick={() => speakJa(item.question.jp)}
+          title="Nghe câu này"
+        >
+          <Volume2 className="h-4 w-4" />
+        </Button>
+      </div>
+    </div>
+  );
+}
+
 function VocabPage() {
   const isMobile = useIsMobile();
   const initialProgress = useMemo(() => loadFlashcardProgress(), []);
+  const [showRelatedVietnamese, setShowRelatedVietnamese] = useState(false);
+  const relatedQuestionsByVocab = useMemo(() => {
+    const relatedMap = new Map<number, RelatedQuestion[]>();
+
+    for (const vocab of vocabularyList) {
+      const matches: RelatedQuestion[] = [];
+      const seenQuestions = new Set<string>();
+
+      for (const exam of exams) {
+        for (const question of exam.questions) {
+          const questionKey = normalizeQuestionText(question.jp);
+          if (seenQuestions.has(questionKey)) continue;
+
+          const matchedVocab = question.vocab.filter((term) =>
+            isRelatedTerm(vocab.jp, term.jp),
+          );
+
+          if (matchedVocab.length === 0) continue;
+
+          seenQuestions.add(questionKey);
+
+          matches.push({
+            examId: exam.id,
+            examTitle: exam.title,
+            question,
+            matchedVocab,
+          });
+        }
+      }
+
+      matches.sort((a, b) => {
+        if (a.examId !== b.examId) return Number(a.examId) - Number(b.examId);
+        return a.question.id - b.question.id;
+      });
+
+      relatedMap.set(vocab.id, matches);
+    }
+
+    return relatedMap;
+  }, []);
   const [flashProgress, setFlashProgress] = useState<Record<number, FlashcardProgress>>(
     () => initialProgress,
   );
@@ -137,6 +303,9 @@ function VocabPage() {
 
   const dueNow = useMemo(() => dueCount(flashProgress), [flashProgress]);
   const currentCard = sessionDeck[0];
+  const currentRelatedQuestions = currentCard
+    ? relatedQuestionsByVocab.get(currentCard.id) ?? []
+    : [];
   const currentProgress = currentCard ? flashProgress[currentCard.id] : undefined;
 
   const resetSwipeState = () => {
@@ -492,6 +661,43 @@ function VocabPage() {
                       "Nhớ được" đẩy thẻ sang lịch ôn xa hơn.
                     </p>
                   </div>
+
+                  <div className="rounded-2xl border border-slate-100 bg-white p-4">
+                    <div className="flex items-center justify-between gap-3">
+                      <div>
+                        <div className="text-sm font-semibold text-slate-900">Câu trong đề</div>
+                        <p className="mt-1 text-xs uppercase tracking-[0.16em] text-slate-400">
+                          Liên quan đến thẻ hiện tại
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-medium text-slate-500">Dịch</span>
+                        <Switch
+                          checked={showRelatedVietnamese}
+                          onCheckedChange={setShowRelatedVietnamese}
+                        />
+                        <Badge variant="outline" className="border-slate-200 text-slate-500">
+                          {currentRelatedQuestions.length}
+                        </Badge>
+                      </div>
+                    </div>
+
+                    <div className="mt-4 space-y-2">
+                      {currentRelatedQuestions.length > 0 ? (
+                        currentRelatedQuestions.slice(0, 2).map((item) => (
+                          <RelatedQuestionRow
+                            key={`${item.examId}-${item.question.id}`}
+                            item={item}
+                            showVietnamese={showRelatedVietnamese}
+                          />
+                        ))
+                      ) : (
+                        <div className="rounded-2xl border border-dashed border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-500">
+                          Chưa có câu nào trong đề được gắn với từ này.
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -499,38 +705,111 @@ function VocabPage() {
 
           <TabsContent value="list" className="mt-0">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {vocabularyList.map((vocab) => (
-                <Card
-                  key={vocab.id}
-                  className="group border-slate-200 transition-all hover:border-slate-300 hover:shadow-md"
-                >
-                  <CardContent className="p-5">
-                    <div className="mb-3 flex items-start justify-between">
-                      <Badge variant="secondary" className="bg-slate-100 text-slate-500 text-xs">
-                        #{vocab.id}
-                      </Badge>
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        className="mr-[-0.5rem] mt-[-0.5rem] h-8 w-8 text-slate-400 group-hover:bg-slate-50 group-hover:text-slate-700"
-                        onClick={() => speakJa(vocab.jp)}
-                        title="Nghe phát âm"
-                      >
-                        <Volume2 className="h-4 w-4" />
-                      </Button>
-                    </div>
+              {vocabularyList.map((vocab) => {
+                const relatedQuestions = relatedQuestionsByVocab.get(vocab.id) ?? [];
 
-                    <div className="space-y-1">
-                      <h3 className="font-jp text-xl font-bold text-slate-900">{vocab.jp}</h3>
-                      <p className="text-sm font-medium text-slate-500">{vocab.romaji}</p>
-                    </div>
+                return (
+                  <Card
+                    key={vocab.id}
+                    className="group overflow-hidden border-slate-200 transition-all hover:border-slate-300 hover:shadow-md"
+                  >
+                    <CardContent className="p-5">
+                      <div className="mb-3 flex items-start justify-between">
+                        <Badge variant="secondary" className="bg-slate-100 text-xs text-slate-500">
+                          #{vocab.id}
+                        </Badge>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="mr-[-0.5rem] mt-[-0.5rem] h-8 w-8 text-slate-400 group-hover:bg-slate-50 group-hover:text-slate-700"
+                          onClick={() => speakJa(vocab.jp)}
+                          title="Nghe phát âm"
+                        >
+                          <Volume2 className="h-4 w-4" />
+                        </Button>
+                      </div>
 
-                    <div className="mt-4 border-t border-slate-100 pt-4">
-                      <p className="leading-relaxed text-slate-700">{vocab.vi}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                      <div className="space-y-1">
+                        <h3 className="font-jp text-xl font-bold text-slate-900">{vocab.jp}</h3>
+                        <p className="text-sm font-medium text-slate-500">{vocab.romaji}</p>
+                      </div>
+
+                      <div className="mt-4 border-t border-slate-100 pt-4">
+                        <p className="leading-relaxed text-slate-700">{vocab.vi}</p>
+                      </div>
+
+                      <Separator className="my-4 bg-slate-100" />
+
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between gap-3">
+                          <div className="space-y-0.5">
+                            <div className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
+                              Câu trong đề
+                            </div>
+                            <p className="text-sm font-medium text-slate-700">
+                              {relatedQuestions.length} câu liên quan
+                            </p>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-medium text-slate-500">Dịch</span>
+                            <Switch
+                              checked={showRelatedVietnamese}
+                              onCheckedChange={setShowRelatedVietnamese}
+                            />
+                            <Badge variant="outline" className="border-slate-200 text-slate-500">
+                              Theo ngữ cảnh
+                            </Badge>
+                          </div>
+                        </div>
+
+                        <div className="space-y-2">
+                          {relatedQuestions.length > 0 ? (
+                            <>
+                              {relatedQuestions.slice(0, 2).map((item) => (
+                                <RelatedQuestionRow
+                                  key={`${item.examId}-${item.question.id}`}
+                                  item={item}
+                                  showVietnamese={showRelatedVietnamese}
+                                />
+                              ))}
+
+                              {relatedQuestions.length > 2 && (
+                                <Collapsible>
+                                  <CollapsibleTrigger asChild>
+                                    <Button
+                                      variant="ghost"
+                                      className="group h-10 w-full justify-between rounded-xl border border-slate-200 bg-slate-50 px-4 text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                                    >
+                                      <span className="flex items-center gap-2">
+                                        <BookOpen className="h-4 w-4" />
+                                        Xem thêm {relatedQuestions.length - 2} câu
+                                      </span>
+                                      <ChevronDown className="h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+                                    </Button>
+                                  </CollapsibleTrigger>
+                                  <CollapsibleContent className="mt-2 space-y-2">
+                                    {relatedQuestions.slice(2).map((item) => (
+                                      <RelatedQuestionRow
+                                        key={`${item.examId}-${item.question.id}`}
+                                        item={item}
+                                        showVietnamese={showRelatedVietnamese}
+                                      />
+                                    ))}
+                                  </CollapsibleContent>
+                                </Collapsible>
+                              )}
+                            </>
+                          ) : (
+                            <div className="rounded-2xl border border-dashed border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-500">
+                              Chưa có câu nào trong đề được gắn với từ này.
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </TabsContent>
         </Tabs>
