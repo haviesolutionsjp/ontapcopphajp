@@ -477,7 +477,7 @@ export const exams: Exam[] = [
           { jp: "まるがた", reading: "Marugata", vi: "Biên dạng tròn" },
           { jp: "かくがた", reading: "Kakugata", vi: "Kiểu hình khối vuông hộp" },
         ],
-        "X",
+        "O",
         "Thuật ngữ 'たんかんパイプ' chỉ duy nhất cho loại ống tuýp thép TRÒN đường kính 48.6mm. Dòng ống hộp vuông có tên riêng là '角パイプ - Kaku paipu'.",
       ),
       q(
