@@ -69,7 +69,7 @@ export const exams: Exam[] = [
         "Separēta wa B-gata BC-gata H-gata ga arimasu.",
         "Thanh ty ren có các loại như loại B, loại BC, và loại H.",
         [{ jp: "セパレータ", reading: "Separēta", vi: "Thanh ty ren / Thanh tách khuôn vách" }],
-        "X",
+        "O",
         "Đây là các ký hiệu phân loại quy cách chuẩn kỹ thuật của hệ thanh ty ren chịu áp lực bê tông tại Nhật Bản.",
       ),
       q(
