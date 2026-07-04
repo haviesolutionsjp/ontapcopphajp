@@ -538,7 +538,7 @@ export const exams: Exam[] = [
         "Kore wa separēta desu.",
         "Đây là thanh ty ren (Separēta).",
         [{ jp: "セパレータ", reading: "Separēta", vi: "Thanh ty ren" }],
-        "O",
+        "X",
         "Hình vẽ minh họa rõ ràng kết cấu thanh trục ty ren thép vách tường có ren cánh bướm gá khoảng cách tường cốp pha.",
         {
           src: "/question-images/exam-3-q1-separator.png",
