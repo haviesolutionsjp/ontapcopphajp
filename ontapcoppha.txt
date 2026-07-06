@@ -1,0 +1,906 @@
+
+--- PAGE 1 ---
+01.
+
+Tiếng Nhật:Tiếng Nhật: これは プラスチックコーン (Pコーン) です。
+Chữ Romaji:Chữ Romaji: Kore wa purasuchikku-kon (P kon) desu.
+Từ vựng trong câu: * これ (kore): Cái này
+
+プラスチックコーン / Pコーン (purasuchikku-kon / P kon): Cục côn nhựa (P-corn)
+Tiếng Việt:Tiếng Việt: Cái này là purasuchikku-kon (p-kon)
+02. (○)
+
+Tiếng Nhật:Tiếng Nhật: さげふりはすいちょくをだすときにつかいます。
+Chữ Romaji:Chữ Romaji: Sagefuri wa suichoku wo dasu toki ni tsukaimasu.
+Từ vựng trong câu:Từ vựng trong câu: * さげふり (sagefuri): Con dọi
+
+すいちょく (suichoku): Độ thẳng đứng
+だす (dasu): Đưa ra / đo
+とき (toki): Khi
+つかいます (tsukaimasu): Dùng / sử dụng
+Tiếng Việt:Tiếng Việt: Con dọi dùng khi đo độ thẳng đứng
+03. (○)
+
+Tiếng Nhật:Tiếng Nhật: Bがたのセパレータ とは Pコーンが りょうがわついている セパレータ のことです。
+Chữ Romaji:Chữ Romaji: B gata no separe-ta towa P-kon ga ryougawa ni tsuiteiru separe-ta no koto desu.
+Từ vựng trong câu:Từ vựng trong câu: * Bがた (B gata): Loại B
+
+セパレータ (separe-ta): Thanh ty ren (separator)
+りょうがわ (ryougawa): Hai bên
+ついている (tsuiteiru): Có gắn / đính kèm
+Tiếng Việt:Tiếng Việt: Separe-ta loại B là loại có gắn P-kon ở hai bên
+04. (×)
+
+Tiếng Nhật:Tiếng Nhật: ごうはんせいかたわくはくりかえし つかいません。
+Chữ Romaji:Chữ Romaji: Gouhansei-katawaku wa kurikaeshi tsukaimasen.
+Từ vựng trong câu:Từ vựng trong câu: * ごうはんせいかたわく (gouhansei-katawaku): Cốp pha ván ép
+
+くりかえし (kurikaeshi): Lặp lại / tái sử dụng
+つかいません (tsukaimasen): Không dùng
+Tiếng Việt:Tiếng Việt: Ván cốp pha không sử dụng lại.
+05. (×)
+
+Tiếng Nhật:Tiếng Nhật: とそうごうはんには はくりざいはつかいません。
+Chữ Romaji:Chữ Romaji: Tosou-gouhan niwa hakurizai wa tsukaimasen.
+Từ vựng trong câu:Từ vựng trong câu: * とそうごうはん (tosou-gouhan): Ván ép sơn (ván phủ phim)
+
+はくりざい (hakurizai): Thuốc/chất chống dính vữa
+Tiếng Việt:Tiếng Việt: Thuốc chống dính vữa không dùng cho ván ép sơn.
+06.
+
+Tiếng Nhật:Tiếng Nhật: かたわくには ごうはんせいかたわく きんぞくせいかたわくなどがあります。
+Chữ Romaji:Chữ Romaji: Katawaku niwa gouhansei-katawaku kinzokusei-katawaku nado ga arimasu.
+Từ vựng trong câu:Từ vựng trong câu: * かたわく (katawaku): Cốp pha
+
+きんぞくせいかたわく (kinzokusei-katawaku): Cốp pha kim loại
+など (nado): Vân vân / các loại như...
+あります (arimasu): Có
+Tiếng Việt:Tiếng Việt: Cốp pha thì có cốp pha bằng ván ép và cốp pha bằng kim loại.
+07.
+
+Tiếng Nhật:Tiếng Nhật: ねがらみクランプとは パイプサポートを こていするものです。
+Chữ Romaji:Chữ Romaji: Negarami-kuranpu towa paipusapooto wo koteisuru mono desu.
+Từ vựng trong câu:Từ vựng trong câu: * ねがらみクランプ (negarami-kuranpu): Khóa giằng chân / khóa ngang
+
+パイプサポート (paipusapooto): Cây chống thép (pipe support)
+こていする (koteisuru): Cố định
+もの (mono): Vật / đồ vật
+Tiếng Việt:Tiếng Việt: Khóa negarami-kuranpu là vật để cố định paipusapo-to
+08. (×)
+
+Tiếng Nhật:Tiếng Nhật: したごしらえにつかう くぎの ながさは 70mm です。
+Chữ Romaji:Chữ Romaji: Shita-goshirae ni tsukau kugi no nagasa wa 70mm desu.
+Từ vựng trong câu:Từ vựng trong câu: * したごしらえ (shita-goshirae): Bước chuẩn bị ban đầu / gia công mộc
+
+くぎ (kugi): Đinh
+ながさ (nagasa): Chiều dài
+Tiếng Việt:Tiếng Việt: Chiều dài của đinh sử dụng cho shita-goshirae là 70mm.
+--- PAGE 2 ---
+09.
+
+Tiếng Nhật:Tiếng Nhật: だいのこ(まるのこばん)はふたりひとくみでつかうほうがよいです。
+Chữ Romaji:Chữ Romaji: Dainoko (marunokoban) wa futari hitokumi de tsukau houga yoi desu.
+Từ vựng trong câu:Từ vựng trong câu: * だいのこ / まるのこばん (dainoko / marunokoban): Máy cưa bàn / máy cắt tròn bàn
+
+ふたり (futari): 2 người
+ひとくみ (hitokumi): Một nhóm / một cặp
+ほう が よい (hou ga yoi): Nên / tốt hơn là...
+Tiếng Việt:Tiếng Việt: Dainoko thì nên sử dụng 2 người cùng một nhóm.
+10. (×)
+
+Tiếng Nhật:Tiếng Nhật: パイプサポートは ちょくせつ コンパネ (かたわくごうはん)をささえます。
+Chữ Romaji:Chữ Romaji: Paipu-sapo-to wa chokusetsu kompane (katawaku-gouhan) wo sasaemasu.
+Từ vựng trong câu:Từ vựng trong câu: * ちょくせつ (chokusetsu): Trực tiếp
+
+コンパネ / かたわくごうはん (kompane / katawaku-gouhan): Ván cốp pha / ván ép lót sàn
+ささえます (sasaemasu): Chống đỡ / nâng đỡ
+Tiếng Việt:Tiếng Việt: Paipusapo-to thì chống trực tiếp vào ván cốp pha.
+11. (×)
+
+Tiếng Nhật:Tiếng Nhật: パイプサポートのすいへいつなぎは たかさ 3mごとにとりつけます。
+Chữ Romaji:Chữ Romaji: Paipu-sapo-to no suihei-tsunagi wa takasa 3m goto ni toritsukemasu.
+Từ vựng trong câu:Từ vựng trong câu: * すいへいつなぎ (suihei-tsunagi): Giằng ngang / neo buộc ngang
+
+たかさ (takasa): Độ cao / chiều cao
+ごと (goto): Cứ mỗi...
+とりつけます (toritsukemasu): Lắp đặt / gắn vào
+Tiếng Việt:Tiếng Việt: Neo buộc ngang của cây chống lắp ở độ cao cứ mỗi 3m
+12. (×)
+
+Tiếng Nhật:Tiếng Nhật: ほじょサポートは パイプサポートのしたにとりつけます。
+Chữ Romaji:Chữ Romaji: Hojo-sapo-to wa paipu-sapo-to no shita ni toritsukemasu.
+Từ vựng trong câu:Từ vựng trong câu: * ほじょサポート (hojo-sapo-to): Cây chống phụ (hỗ trợ)
+
+した (shita): Phía dưới
+Tiếng Việt:Tiếng Việt: Cây chống thì lắp dưới paipusapo-to.
+13. (○)
+
+Tiếng Nhật:Tiếng Nhật: しきさんぎは たかさをきめてすいへいにゆかにとめます。
+Chữ Romaji:Chữ Romaji: Shiki-sangi wa takasa wo kimete suihei ni yuka ni tomemasu.
+Từ vựng trong câu:Từ vựng trong câu: * しきさんぎ (shiki-sangi): Thanh gỗ lót nền / thanh sàn
+
+きめて (kimete): Quyết định / xác định
+すいへい (suihei): Thăng bằng / nằm ngang
+ゆか (yuka): Sàn nhà
+とめます (tomemasu): Nẹp lại / cố định lại
+Tiếng Việt:Tiếng Việt: Cây gỗ shikisangi thì nẹp ở sàn nhà khi chiều cao được quyết định.
+14. (×)
+
+Tiếng Nhật:Tiếng Nhật: かたわくをしめている パイプをとったらすぐに パネルの かいたいに はいります。
+Chữ Romaji:Chữ Romaji: Katawaku wo shimeteiru paipu wo tottara sugini paneru no kaitai ni hairimasu.
+Từ vựng trong câu:Từ vựng trong câu: * しめている (shimeteiru): Đang siết / cố định
+
+パイプ (paipu): Ống sắt / cây chống ống
+とったら (tottara): Sau khi tháo ra / lấy ra
+すぐに (suguni): Ngay lập tức
+パネル (paneru): Tấm ván / panel
+かいたい (kaitai): Tháo dỡ
+はいります (hairimasu): Bước vào / tiến hành
+Tiếng Việt:Tiếng Việt: Sau khi lấy cây chống cốp pha xuống thì lập tức tháo dỡ ván cốp pha.
+15. (×)
+
+Tiếng Nhật:Tiếng Nhật: コンクリートだせつに バイブレータをつかう ばあいはてっきんに ちょくせつ あててしんどうをつたえるようにするとよいです。
+Chữ Romaji:Chữ Romaji: Konkurito-dasetsu ni baibure-ta wo tsukau baai wa tekkin ni chokusetsu atete shindou wo tsutaeru youni suru to yoi desu.
+Từ vựng trong câu:Từ vựng trong câu: * だせつ (dasetsu): Đổ bê tông
+
+バイブレータ (baibure-ta): Máy đầm dùi (vibrator)
+ばあい (baai): Trường hợp
+てっきん (tekkin): Cốt thép
+あてて (atete): Chạm vào / gõ vào
+しんどう (shindou): Chấn động / độ rung
+つたえる (tsutaeru): Truyền vào
+Tiếng Việt:Tiếng Việt: Trường hợp dùng baibure-ta trong lúc đổ bê tông thì cho máy rung chạm trực tiếp vào cốt thép.
+16. (○)
+
+Tiếng Nhật:Tiếng Nhật: たんかんパイプにはまるがたとかくがたがあります。
+Chữ Romaji:Chữ Romaji: Tankan-paipu niwa marugata to kakugata ga arimasu.
+Từ vựng trong câu:Từ vựng trong câu: * たんかんパイプ (tankan-paipu): Ống tuýp đơn / ống sắt tròn dời
+
+まるがた (marugata): Loại tròn
+かくがた (kakugata): Loại vuông
+Tiếng Việt:Tiếng Việt: Ống tankan có loại tròn và loại vuông.
+17. (×)
+
+Tiếng Nhật:Tiếng Nhật: まるのこぱんをつかうときはてぶくろをします。
+Chữ Romaji:Chữ Romaji: Maruno-koban wo tsukau toki wa tebukuro wo shimasu.
+Từ vựng trong câu:Từ vựng trong câu: * てぶくろ (tebukuro): Găng tay / bao tay
+
+します (shimasu): Đeo / mặc / làm
+Tiếng Việt:Tiếng Việt: Khi dùng máy maruno-koban thì đeo bao tay.
+--- PAGE 3 ---
+18. (×)
+
+Tiếng Nhật:Tiếng Nhật: きゃたつをつかってさぎょうをするときはきゃたつの いちばんうえに たってもよいです。
+Chữ Romaji:Chữ Romaji: Kyatatsu wo tsukatte sagyou wo suru toki wa kyatatsu no ichiban ue ni tattemo yoidesu.
+Từ vựng trong câu:Từ vựng trong câu: * きゃたつ (kyatatsu): Thang xếp / thang chữ A
+
+さぎょう (sagyou): Công việc / thao tác
+いちばんうえ (ichiban ue): Trên cùng / đỉnh cao nhất
+たってもよい (tattemo yoi): Đứng cũng được
+Tiếng Việt:Tiếng Việt: Khi làm sử dụng thang xếp chữ A thì đứng ở trên cùng của thang cũng được.
+19. (×)
+
+Tiếng Nhật:Tiếng Nhật: コンクリートくぎをうつときは ほごめがねはいりません。
+Chữ Romaji:Chữ Romaji: Konkurito-kugi wo utsu toki wa hogomegane wa irimasen.
+Từ vựng trong câu:Từ vựng trong câu: * コンクリートくぎ (konkurito-kugi): Đinh bê tông
+
+うつ (utsu): Đóng (đinh) / bắn
+ほごめがね (hogomegane): Kính bảo hộ
+いりません (irimasen): Không cần
+Tiếng Việt:Tiếng Việt: Khi đóng đinh bê tông thì không cần kính bảo hộ.
+20. (×)
+
+Tiếng Nhật:Tiếng Nhật: あぶらのついたこうぐをつかってもよいです。
+Chữ Romaji:Chữ Romaji: Abura no tsuita kougu wo tsukattemo yoi desu.
+Từ vựng trong câu:Từ vựng trong câu: * あぶら (abura): Dầu / mỡ
+
+ついた (tsuita): Dính / bám vào
+こうぐ (kougu): Dụng cụ / công cụ
+Tiếng Việt:Tiếng Việt: Sử dụng dụng cụ dính dầu cũng được.
+--- PAGE 4 ---
+01. (×)
+
+Tiếng Nhật:Tiếng Nhật: レベルはかくどをしらべるときにつかいます。
+Chữ Romaji:Chữ Romaji: Reberu wa kakudo wo shiraberu toki ni tsukaimasu.
+Từ vựng trong câu:Từ vựng trong câu: * レベル (reberu): Thước thủy / máy thủy bình
+
+かくど (kakudo): Góc độ
+しらべる (shiraberu): Kiểm tra / điều tra
+Tiếng Việt:Tiếng Việt: Thước thủy dùng khi đo góc độ.
+02. (×)
+
+Tiếng Nhật:Tiếng Nhật: フォームタイは コンクリートのなかにうちこんでしまうものです。
+Chữ Romaji:Chữ Romaji: Fomutai wa konkuri-to no naka ni uchikonde shimau mono desu.
+Từ vựng trong câu:Từ vựng trong câu: * フォームタイ (fomutai): Khóa giáo / gông cốp pha (form tie)
+
+うちこんでしまう (uchikonde shimau): Bị đóng chôn luôn vào trong
+Tiếng Việt:Tiếng Việt: Fo-mutai là vật đóng vào trong vữa bê tông.
+03.
+
+Tiếng Nhật: Bがたのセパレータ とは Pコーンが りょうがわついている セパレータ のことです。
+Chữ Romaji: B gata no separe-ta towa P-kon ga ryougawa ni tsuiteiru separe-ta no koto desu.
+Từ vựng trong câu: (Giống câu 3 ở trang 1)
+Tiếng Việt:Tiếng Việt: Separe-ta loại B là loại có gắn P-kon ở hai bên
+04.
+
+Tiếng Nhật: これはわくぐみあしばです。
+Chữ Romaji: Kore wa wakugumi-ashiba desu.
+Từ vựng trong câu:Từ vựng trong câu: * わくぐみあしば (wakugumi-ashiba): Giàn giáo khung / giàn giáo hoàn thiện
+Tiếng Việt:Tiếng Việt: Cái này là dàn giáo khung.
+05. (○)
+
+Tiếng Nhật: まるばしらには かみかたわくもおおくつかわれます。
+Chữ Romaji: Maru-bashira niwa kami-katawaku mo ooku tsukawaremasu.
+Từ vựng trong câu:Từ vựng trong câu: * まるばしら (maru-bashira): Cột tròn
+
+かみかたわく (kami-katawaku): Cốp pha bằng giấy ống
+おおく (ooku): Nhiều / phổ biến
+Tiếng Việt:Tiếng Việt: Cốp pha giấy cũng thường được sử dụng cho cột tròn.
+06. (×)
+
+Tiếng Nhật: フラットデッキプレートははしらかたわくにつかいます。
+Chữ Romaji: Furattodekki pureto wa hashira-katawaku ni tsukaimasu.
+Từ vựng trong câu:Từ vựng trong câu: * フラットデッキプレート (furattodekki pureto): Tấm sàn deck / sàn sắt phẳng
+
+はしらかたわく (hashira-katawaku): Cốp pha cột
+Tiếng Việt:Tiếng Việt: Sàn deck thì dùng cho cốp pha cột.
+07.
+
+Tiếng Nhật: ごうはんパネルの 3×6とは はば900mm ながさ 1,800mmのすんぼうを いいます。
+Chữ Romaji: Gouhan paneru no 3/6 towa haba 900mm nagasa 1,800mm no sumpou wo iimasu.
+Từ vựng trong câu: * 3×6 (sanroku): Khổ ván 3x6 feet (thước Anh)
+
+はば (haba): Chiều rộng / bề ngang
+すんぽう (sumpou): Kích thước
+いいます (iimasu): Gọi là / nói là
+Tiếng Việt:Tiếng Việt: Ván cốp pha 3x6 còn gọi là có kích thước chiều rộng 900mm chiều dài là 1,800mm
+--- PAGE 5 ---
+08.
+
+Tiếng Nhật:Tiếng Nhật: はしらかたわくのしたごしらえはしたごじらえず(かこうず)によって つくります。
+Chữ Romaji:Chữ Romaji: Hashira-katawaku no shita-goshirae wa shitagojiraezu (kakouzu) ni yotte tsukurimasu.
+Từ vựng trong câu:Từ vựng trong câu: * したごしらえず / かこうず (shitagoshiraezu / kakouzu): Bản vẽ gia công / bản vẽ chuẩn bị
+
+によって (ni yotte): Dựa vào / theo như
+つくります (tsukurimasu): Làm / chế tạo
+Tiếng Việt:Tiếng Việt: Bước chuẩn bị cho cốp pha cột thì làm theo bản vẽ.
+09.
+
+Tiếng Nhật:Tiếng Nhật: はくりざいをぬるときはゆかに シートなどをしきます。
+Chữ Romaji:Chữ Romaji: Hakurizai wo nuru toki wa yuka ni shi-to nado wo shimasu.
+Từ vựng trong câu:Từ vựng trong câu: * ぬる (nuru): Quét / bôi / sơn
+
+シート (shi-to): Tấm bạt / tấm trải (sheet)
+しきます (shikimasu): Trải ra / lót ra
+Tiếng Việt:Tiếng Việt: Khi bôi thuốc chống dính vữa thì trải bạt dưới sàn nhà.
+10. (×)
+
+Tiếng Nhật:Tiếng Nhật: かたわくはすきまがあるように くみたてます。
+Chữ Romaji:Chữ Romaji: Katawaku wa sukima ga aru youni kumitatemasu.
+Từ vựng trong câu:Từ vựng trong câu: * すきま (sukima): Khe hở / khoảng trống
+
+くみたてます (kumitatemasu): Lắp ráp / dựng lên
+Tiếng Việt:Tiếng Việt: Lắp cốp pha thì chừa khe hở.
+11. (×)
+
+Tiếng Nhật:Tiếng Nhật: はしらとかべをくみたてるときはさげふりはつかいません。
+Chữ Romaji:Chữ Romaji: Hashira to kabe wo kumitateru toki wa sagefuri wa tsukaimasen.
+Từ vựng trong câu:Từ vựng trong câu: * かべ (kabe): Bức tường
+Tiếng Việt:Tiếng Việt: Khi lắp tường với cột thì không dùng con dọi
+12. (○)
+
+Tiếng Nhật:Tiếng Nhật: がいへきパネルのしたにはしきばたをつかいます。
+Chữ Romaji:Chữ Romaji: Gaiheki-paneru no shita niwa shikibata wo tsukaimasu.
+Từ vựng trong câu:Từ vựng trong câu: * がいへき (gaiheki): Tường ngoài / ngoại thất
+
+しきばた (shikibata): Thanh đỡ cốp pha tường ngoài nhô ra từ sàn tầng trên
+Tiếng Việt:Tiếng Việt: Sử dụng shikibata lót dưới cốp pha phía tường bên ngoài
+13. (×)
+
+Tiếng Nhật:Tiếng Nhật: パネルと パネルを くぎでとめるときはかならず くぎはうちこんで しまいます。
+Chữ Romaji:Chữ Romaji: Paneru to paneru wo kugi de tomeru toki wa kanarazu kugi wa uchikonde shimaimasu.
+Từ vựng trong câu:Từ vựng trong câu: * かならず (kanarazu): Nhất định / bắt buộc
+
+うちこんで しまいます (uchikonde shimaimasu): Đóng lút vào hoàn toàn
+Tiếng Việt:Tiếng Việt: Khi đóng ván cốp pha với ván cốp pha bằng đinh thì nhất định phải đóng hết cây đinh vào.
+14. (×)
+
+Tiếng Nhật:Tiếng Nhật: かいたいした パイプはかべにたてかけておきます。
+Chữ Romaji:Chữ Romaji: Kaitaishita paipu wa kabe ni tatekakete okimasu.
+Từ vựng trong câu:Từ vựng trong câu: * たてかけて (tatekakete): Dựng đứng / dựng vào
+
+おきます (okimasu): Để / đặt sẵn
+Tiếng Việt:Tiếng Việt: Những ống đã tháo dỡ thì để dựng đứng vào tường.
+15. (×)
+
+Tiếng Nhật:Tiếng Nhật: コンクリートを うつときは バイブレータを てっきんにあてます。
+Chữ Romaji:Chữ Romaji: Konkuri-to wo utsu toki wa baibure-ta wo tekkin ni atemasu.
+Từ vựng trong câu: (Giống câu 15 ở trang 2)
+Tiếng Việt:Tiếng Việt: Khi đổ bê tông thì cho baibure-ta chạm vào cốt thép.
+16. (×)
+
+Tiếng Nhật:Tiếng Nhật: パネルをつくるときのベニヤは あつみ 5.5mmを いつもつかいます。
+Chữ Romaji:Chữ Romaji: Paneru wo tsukuru toki no beniya atsumi 5.5mm wo itsumo tsukaimasu
+Từ vựng trong câu:Từ vựng trong câu: * ベニヤ (beniya): Ván dán / tấm gỗ ép mỏng (veneer)
+
+あつみ (atsumi): Độ dày
+いつも (itsumo): Luôn luôn / lúc nào cũng
+Tiếng Việt:Tiếng Việt: Ván mỏng dùng khi làm cốp pha thì lúc nào cũng sử dụng độ dày 5,5mm
+--- PAGE 6 ---
+17.
+
+Tiếng Nhật:Tiếng Nhật: この ひょうしきがあるところにははいってはいけません。
+Chữ Romaji:Chữ Romaji: Kono hyoushiki ga aru tokoro niwa haittewa ikemasen.
+Từ vựng trong câu:Từ vựng trong câu: * ひょうしき (hyoushiki): Biển báo / ký hiệu
+
+はいってはいけません (haitte wa ikemasen): Không được vào (Cấm vào)
+(Chữ trên hình) 立入禁止 (Tachiiiri kinshi): Cấm vào
+Tiếng Việt:Tiếng Việt: Những nơi có biển báo này thì không được vào.
+18. (○)
+
+Tiếng Nhật:Tiếng Nhật: いどうしきあしば (ローリングタワー)のうえではきゃたつをつかってはいけ ません。
+Chữ Romaji:Chữ Romaji: Idoushiki-ashiba (rorinngu-tawa) no ue dewa kyatatsu wo tsukattewa ikemasen.
+Từ vựng trong câu:Từ vựng trong câu: * いどうしきあしば / ローリングタワー (idoushiki-ashiba / rorinngu-tawa): Giàn giáo di động / giàn giáo có bánh xe (rolling tower)
+
+うえ (ue): Trên bề mặt / phía trên
+Tiếng Việt:Tiếng Việt: Trên giàn giáo di động không được sử dụng thang xếp chữ A.
+19. (×)
+
+Tiếng Nhật:Tiếng Nhật: けいたいようまるのこは じぶんのものであれば しょうまえ てんけんは ひつよう ありません。
+Chữ Romaji:Chữ Romaji: Keitaiyou-marunoko wa jibun no mono de areba shiyou mae tenken wa hitsuyou arimasen.
+Từ vựng trong câu:Từ vựng trong câu: * けいたいようまるのこ (keitaiyou-marunoko): Máy cưa tròn cầm tay
+
+じぶんのもの (jibun no mono): Đồ của bản thân
+~あれば (~areba): Nếu là...
+しようまえ (shiyou mae): Trước khi sử dụng
+てんけん (tenken): Kiểm tra
+ひつよう ありません (hitsuyou arimasen): Không cần thiết
+Tiếng Việt:Tiếng Việt: Lưỡi cắt cầm tay nếu là vật của mình thì trước khi sử dụng không cần kiểm tra.
+20. (○)
+
+Tiếng Nhật:Tiếng Nhật: ほごぐをつけてさぎょうがしにくいときでもほごぐはつけて さぎょう します。
+Chữ Romaji:Chữ Romaji: Hogoku wo tsukete sagyou ga shinikui toki demo hogogu wa tsukete sagyou shimasu.
+Từ vựng trong câu:Từ vựng trong câu: * ほごぐ (hogogu): Đồ bảo hộ / trang thiết bị an toàn
+
+しにくい (shinikui): Khó làm
+~ときでも (~toki demo): Dù là khi...
+Tiếng Việt:Tiếng Việt: Dẫu cho mặc đồ bảo hộ có bị vướng thì cũng phải mặc rồi làm
+--- PAGE 7 ---
+01.
+
+Tiếng Nhật:Tiếng Nhật: これは さげふりです。
+Chữ Romaji:Chữ Romaji: Kore wa sagefuri desu.
+Từ vựng trong câu: (Xem lại từ vựng câu 2 ở trang 1)
+Tiếng Việt:Tiếng Việt: Cái này là con dọi.
+02. (×)
+
+Tiếng Nhật:Tiếng Nhật: さげふりはすいへいをだすときに つかいます。
+Chữ Romaji:Chữ Romaji: Sagefuri wa suihei wo dasu toki ni tsukaimasu.
+Từ vựng trong câu:Từ vựng trong câu: * すいへい (suihei): Mặt phẳng ngang / độ thăng bằng
+Tiếng Việt:Tiếng Việt: Con dọi dùng khi đo mặt phẳng
+03. (×)
+
+Tiếng Nhật:Tiếng Nhật: セパレータはBがた BCがた Hがたがあります。
+Chữ Romaji: Separe-ta wa B gata, BC gata, H gata ga arimasu.
+Từ vựng trong câu:Từ vựng trong câu: * Bがた / BCがた / Hがた: Các ký hiệu loại thanh ty ren cốp pha
+Tiếng Việt:Tiếng Việt: Separe-ta có loại B, loại C, loại H.
+04. (×)
+
+Tiếng Nhật: コンパネ(かたわくごうはん)はたいようのあたるところに ながいじかん おいてもよいです。
+Chữ Romaji: Konpane (katawakugouhan) wa taiyou no ataru tokoro ni nagai jikan oitemo yoi desu.
+Từ vựng trong câu: * たいよう (taiyou): Mặt trời
+
+あたる ところ (ataru tokoro): Nơi chiếu sáng / nơi tiếp xúc
+ながいじかん (nagai jikan): Thời gian dài / lâu
+Tiếng Việt:Tiếng Việt: Ván cốp pha để lâu ở chỗ nắng cũng được.
+05. (×)
+
+Tiếng Nhật: きんぞくせいかたわくにははくりざいをぬらなくてもよいです。
+Chữ Romaji: Kinzokusei-katawaku niwa hakurizai wo nuranakutemo yoi desu.
+Từ vựng trong câu: * ぬらなくてもよい (nuranakutemo yoi): Không quét/bôi cũng được
+Tiếng Việt:Tiếng Việt: Không bôi thuốc chống dính vữa vào cốp pha kim loại cũng được.
+06.
+
+Tiếng Nhật:Tiếng Nhật: コンパネ(かたわくごうはん)はたいすいせいのものをつかいます。
+Chữ Romaji:Chữ Romaji: Kompane (katawaku-gouhan) wa taisuisei no mono wo tsukaimasu.
+Từ vựng trong câu:Từ vựng trong câu: * たいすいせい (taisuisei): Tính chịu nước / chống thấm nước
+Tiếng Việt:Tiếng Việt: Ván cốp pha thì sử dụng loại có tính chịu nước.
+07.
+
+Tiếng Nhật:Tiếng Nhật: セパレータは コンクリートのなかに うちこんでしまうものです。
+Chữ Romaji:Chữ Romaji: Separe-ta wa konkuri-to no nakani uchikondeshimau mono desu.
+Từ vựng trong câu: (Xem lại câu 2 ở trang 4)
+Tiếng Việt:Tiếng Việt: Separe-ta là vật đóng vào trong bê tông.
+--- PAGE 8 ---
+08. (×)
+
+Tiếng Nhật:Tiếng Nhật: がいへきパネルの したごしらえはくりかえしつかえるようにつくります。
+Chữ Romaji:Chữ Romaji: Gaiheki-paneru no shita-goshirae wa kurikaeshi tsukaeru youni tsukurimasu.
+Từ vựng trong câu:Từ vựng trong câu: * くりかえし つかえる ように (kurikaeshi tsukaeru youni): Để có thể sử dụng lại nhiều lần
+Tiếng Việt:Tiếng Việt: Những loại ván dùng cho tường thì làm để sao cho có thể sử dụng lại được.
+09. (×)
+
+Tiếng Nhật:Tiếng Nhật: したごしらえでわからないときは じぶんでかんがえてつくります。
+Chữ Romaji:Chữ Romaji: Shita-goshirae de wakaranai toki wa jibun de kangaete tsukurimasu.
+Từ vựng trong câu:Từ vựng trong câu: * わからない (wakaranai): Không biết / không hiểu
+
+じぶんで (jibun de): Tự mình
+かんがえて (kangaete): Suy nghĩ
+Tiếng Việt:Tiếng Việt: Khi không biết làm bước chuẩn bị ban đầu thì tự mình suy nghĩ rồi làm
+10. (×)
+
+Tiếng Nhật:Tiếng Nhật: すいへいつなぎは いちほうこうにとりつければよいです。
+Chữ Romaji:Chữ Romaji: Suihei-tsunagi wa ichihoukou ni toritsukereba yoi desu.
+Từ vựng trong câu:Từ vựng trong câu: * いちほうこう (ichihoukou): Một hướng / cùng một chiều
+
+とりつければよい (toritsukereba yoi): Chỉ cần lắp đặt... là được
+Tiếng Việt:Tiếng Việt: Thanh giằng ngang nếu lắp cùng chiều cũng được.
+11. (○)
+
+Tiếng Nhật:Tiếng Nhật: がいへきパネルのしたにはしきばたをつかいます。
+Chữ Romaji:Chữ Romaji: Gaiheki-paneru no shita niwa shikibata wo tsukaimasu.
+Từ vựng trong câu: (Giống câu 12 ở trang 5)
+Tiếng Việt:Tiếng Việt: Sử dụng shikibata lót dưới cốp pha phía tường bên ngoài
+12.
+
+Tiếng Nhật: コンパネ (かたわくごうはん)やさんぎは くりかえしてつかえるように くみたてます。
+Chữ Romaji: Konpane (katawakugouhan) ya sangi wa kurikaeshite tsukaeru youni kumitatemasu.
+Từ vựng trong câu:Từ vựng trong câu: * さんぎ (sangi): Thanh gỗ chịu lực vuông (thường có kích thước cố định)
+Tiếng Việt:Tiếng Việt: Thanh gỗ và ván cốp pha thì lắp ráp sao cho có thể sử dụng lại.
+13. (○)
+
+Tiếng Nhật:Tiếng Nhật: セパレータに ホームタイをつけるときはかならず ホームタイが まわるまで まわし しっかりとつけます。
+Chữ Romaji:Chữ Romaji: Separe-ta ni ho-mutai wo tsukeru toki wa kanarazu ho-mutai ga mawaru made mawashi shikkari to tsukemasu.
+Từ vựng trong câu:Từ vựng trong câu: * まわるまで (mawaru made): Cho đến khi xoay/vặn chặt kịch
+
+まわし (mawashi): Xoay / vặn
+しっかりと (shikkari to): Chắc chắn / chặt chẽ
+Tiếng Việt:Tiếng Việt: Khi lắp ho-mutai vào separe-ta thì nhất định vặn chắc ho-mutai rồi lắp vào
+14.
+
+Tiếng Nhật: パネルかたわくはこわさないように ていねいにかいたいします。
+Chữ Romaji: Paneru-katawaku wa kowasanai youni teinei ni kaitaishimasu.
+Từ vựng trong câu:Từ vựng trong câu: * こわさないように (kowasanai youni): Để không làm hỏng / làm vỡ
+
+ていねいに (teinei ni): Cẩn thận / tỉ mỉ
+Tiếng Việt:Tiếng Việt: Ván cốp pha tháo dỡ cẩn thận không làm hỏng.
+15. (×)
+
+Tiếng Nhật:Tiếng Nhật: バイブレータはなるべくながく かけたほうがよいです。
+Chữ Romaji:Chữ Romaji: Baibure-ta wa narubeku nagaku kaketa houga yoi desu.
+Từ vựng trong câu:Từ vựng trong câu: * なるべく (narubeku): Cố gắng hết sức / càng... càng tốt
+
+ながく (nagaku): Lâu / dài
+かけた (kaketa): Cắm vào / đầm dùi
+Tiếng Việt:Tiếng Việt: Baibure-ta thì nên cố gắng để lâu.
+16. (×)
+
+Tiếng Nhật:Tiếng Nhật: かたわくをしめつけるのにたんかんぱいぷはつかいません。
+Chữ Romaji:Chữ Romaji: Katawaku wo shimetsukeru noni tankan-paipu wa tsukaimasen.
+Từ vựng trong câu:Từ vựng trong câu: * しめつける (shimetsukeru): Siết chặt / gia cố kẹp
+Tiếng Việt:Tiếng Việt: Ống típ không sử dụng để xiết cốp pha.
+--- PAGE 9 ---
+17. (○)
+
+Tiếng Nhật:Tiếng Nhật: まるのこばんは つかうまえに てんけんをします。
+Chữ Romaji:Chữ Romaji: Maru no kohan wa tsukau mae ni tenkenshimasu.
+Từ vựng trong câu: (Xem lại câu 19 ở trang 6)
+Tiếng Việt:Tiếng Việt: Kiểm tra máy cắt trước khi sử dụng.
+18. (○)
+
+Tiếng Nhật:Tiếng Nhật: あしばをくみたてるときは あんぜんたいをつけます。
+Chữ Romaji:Chữ Romaji: Ashiba wo kumitateru toki wa anzen tai wo tsukemasu.
+Từ vựng trong câu:Từ vựng trong câu: * あしば (ashiba): Giàn giáo
+
+あんぜんたい (anzentai): Dây đai an toàn / dây bảo hộ
+Tiếng Việt:Tiếng Việt: Khi lắp dàn giáo thì đeo dây bảo hộ.
+19.
+
+Tiếng Nhật:Tiếng Nhật: 2m いじょうのたかいところでさぎょうをするときは あんぜんたいを つけます。
+Chữ Romaji:Chữ Romaji: 2m ijou no takai tokoro de sagyou wo suru toki wa anzentai wo tsukemasu.
+Từ vựng trong câu:Từ vựng trong câu: * いじょう (ijou): Trở lên
+
+たかいところ (takai tokoro): Nơi cao
+Tiếng Việt:Tiếng Việt: Khi làm ở chỗ cao hơn 2m thì đeo dây bảo hộ.
+20. (○)
+
+Tiếng Nhật:Tiếng Nhật: はきものはさぎょうに てきしたものをはきます。
+Chữ Romaji:Chữ Romaji: Hakimono wa sagyou ni tekishitamono wo hakimasu.
+Từ vựng trong câu:Từ vựng trong câu: * はきもの (hakimono): Giày dép / đồ đi dưới chân
+
+てきしたもの (tekishitamono): Vật thích hợp / phù hợp
+はきます (hakimasu): Đi (giày) / xỏ (quần)
+Tiếng Việt:Tiếng Việt: Giày thì mang những loại thích hợp trong công việc.
+--- PAGE 10 ---
+01. (×)
+
+Tiếng Nhật:Tiếng Nhật: これは セパレータです。
+Chữ Romaji:Chữ Romaji: Kore wa separe-ta desu.
+Từ vựng trong câu: (Hình vẽ thực tế hiển thị Form tie/Khóa giáo chứ không phải ty ren Separator)
+Tiếng Việt:Tiếng Việt: Cái này là separe-ta.
+02. (○)
+
+Tiếng Nhật: これは しんずみです。
+Chữ Romaji: Kore wa shinzumi desu.
+Từ vựng trong câu:Từ vựng trong câu: * しんずみ (shinzumi): Mực tim / đường mực trung tâm trục
+Tiếng Việt:Tiếng Việt: Cái này là shinzumi.
+03. (○)
+
+Tiếng Nhật: めんぎをうつときはめんぎくぎをつかいます。
+Chữ Romaji: Mengi wo utsu toki wa mengikugi wo tsukaimasu.
+Từ vựng trong câu:Từ vựng trong câu: * めんぎ (mengi): Thanh vát góc / nẹp vát tam giác (để tạo cạnh vát bê tông)
+
+めんぎくぎ (mengikugi): Đinh chuyên dụng đóng thanh vát góc
+Tiếng Việt:Tiếng Việt: Khi đóng mengi thì sử dụng đinh mengi
+04.
+
+Tiếng Nhật: これはわくぐみあしばにつかいます。
+Chữ Romaji: Kore wa wakugumi-ashiba ni tsukaimasu.
+Từ vựng trong câu: (Xem lại từ vựng câu 4 ở trang 4)
+Tiếng Việt:Tiếng Việt: Cái này sử dụng cho dàn giáo khung.
+--- PAGE 11 ---
+05. (×)
+
+Tiếng Nhật:Tiếng Nhật: コンパネ(かたわくごうはん)はたいようのあたるところに ながいじかん おいてもよいです。
+Chữ Romaji:Chữ Romaji: Konpane (katawakugouhan) wa taiyou no ataru tokoro ni nagai jikan oitemoyoi desu.
+Tiếng Việt:Tiếng Việt: Ván cốp pha để lâu ở chỗ nắng cũng được
+06. (×)
+
+Tiếng Nhật: ごうはんせいかたわくときんぞくせいかたわくはいっしょにつかえません。
+Chữ Romaji: Gouhansei-katawaku to kinzokusei-katawaku wa isshoni tsukaemasen.
+Từ vựng trong câu:Từ vựng trong câu: * いっしょに (isshoni): Cùng một lúc / cùng với nhau
+
+つかえません (tsukaemasen): Không thể dùng
+Tiếng Việt:Tiếng Việt: Cốp pha bằng gỗ và cốp pha kim loại không thể sử dụng chung
+07. (×)
+
+Tiếng Nhật:Tiếng Nhật: ターンバックルは コンパネ (かたわくごうhんと ごうはん とさんぎをつなぐものです。
+Chữ Romaji:Chữ Romaji: Tanbakkuru wa konpane (katawakugouhan) to sangi wo tsunagu mono desu.
+Từ vựng trong câu:Từ vựng trong câu: * ターンバックル (tanbakkuru): Tăng đơ (Turnbuckle)
+
+つなぐ (tsunagu): Kết nối / liên kết
+Tiếng Việt:Tiếng Việt: Tăng đơ cáp thép tanbakkuru là vật nối thanh gỗ với ván cốp pha.
+08.
+
+Tiếng Nhật: はしらかたわくのしたごしらえは したごじらえず (かこうず)によって つくります。
+Chữ Romaji: Hashira-katawaku no shita-goshirae wa shitagojiraezu (kakouzu) ni yotte tsukurimasu.
+Tiếng Việt: Bước chuẩn bị cho cốp pha cột thì làm theo bản vẽ.
+09.
+
+Tiếng Nhật: かたわくに おおくつかわれる くぎの ながさは 45mm~50mmと65mmです。
+Chữ Romaji: Katawaku ni ooku tsukawareru kugi no nagasa wa 45mm~50mm to 65mm desu.
+Tiếng Việt: Chiều dài của đinh được sử dụng nhiều cho cốp pha là 45mm, 50mm và 65mm.
+10. (○)
+
+Tiếng Nhật: さんぎはかたわくをくみたてるためにつかいます。
+Chữ Romaji: Sangi wa katawaku wo kumitateru tameni tsukaimasu.
+Từ vựng trong câu: * ~ために (~tameni): Để phục vụ cho mục đích...
+Tiếng Việt: Thanh gỗ dùng để lắp cốp pha.
+11. (×)
+
+Tiếng Nhật:Tiếng Nhật: すいへいつなぎは いちほうこうにとりつければよいです。
+Chữ Romaji:Chữ Romaji: Suihei-tsunagi wa ichihoukou ni toritsukereba yoi desu.
+Tiếng Việt:Tiếng Việt: Thanh giằng ngang nếu lắp cùng chiều cũng được.
+12.
+
+Tiếng Nhật: パイプサポートをつnaiでつかうときは 2ほんまでとします。
+Chữ Romaji: Paipu-sapooto wo tsunaide tsukau toki wa 2hon made toshimasu.
+Từ vựng trong câu:Từ vựng trong câu: * つないで (tsunaide): Nối lại / liên kết dài
+
+2ほんまで (2hon made): Tối đa là 2 cây
+Tiếng Việt: Khi nối cây chống sàn thì nối chỉ đến 2 cây.
+13. (×)
+
+Tiếng Nhật: うちはなしかたわくには Cかたセパレータをつかいます。
+Chữ Romaji: Uchihanashi-katawaku niwa C kata-separeta wo tsukaimasu.
+Từ vựng trong câu:Từ vựng trong câu: * うちはなしかたわく (uchihanashi-katawaku): Cốp pha bê tông trần (không tô trát) / cốp pha phủ phim chất lượng cao
+
+Cかたセパレータ (C kata-separeta): Ty ren loại C
+Tiếng Việt:Tiếng Việt: Dùng separe-ta loại C cho cốp pha phủ phim.
+--- PAGE 12 ---
+14. (×)
+
+Tiếng Nhật:Tiếng Nhật: かいたいにはかいたいようのバールは ひつようありません。
+Chữ Romaji:Chữ Romaji: Kaitai niwa kaitai you no ba-ru wa hitsuyou arimasen.
+Từ vựng trong câu:Từ vựng trong câu: * バール (ba-ru): Xà beng / thanh nạy (crowbar)
+Tiếng Việt:Tiếng Việt: Xà beng thì không cần thiết cho tháo dỡ.
+15. (×)
+
+Tiếng Nhật:Tiếng Nhật: かたくてうちにくくなった コンクリートはげんぱでみずをいれて やわらかくします。
+Chaji Romaji:Chaji Romaji: Katakute uchinikukunatta konkurito wa genba de mizu wo irete yawarakaku shimasu.
+Từ vựng trong câu:Từ vựng trong câu: * かたくて (katakute): Cứng / khô cứng
+
+うちにくくなった (uchinikukunatta): Trở nên khó đổ / khó thi công
+げんば (genba): Công trường / hiện trường
+みずをいれて (mizu wo irete): Cho nước vào
+やわらかくします (yawarakaku shimasu): Làm cho mềm ra
+Tiếng Việt:Tiếng Việt: Bê tông trở nên cứng khó đổ thì cho nước vào để làm mềm.
+16. (×)
+
+Tiếng Nhật:Tiếng Nhật: パネルをつくるときの ベニヤは あつみ 5.5mmを いつもつかいます。
+Chữ Romaji:Chữ Romaji: Paneru wo tsukuru toki no beniya atsumi 5.5mm wo itsumo tsukaimasu
+Tiếng Việt:Tiếng Việt: Ván mỏng dùng khi làm cốp pha thì lúc nào cũng sử dụng độ dày 5,5mm.
+17. (○)
+
+Tiếng Nhật:Tiếng Nhật: ほごぼうの あごひもはしめなくてはいけません。
+Chữ Romaji:Chữ Romaji: Hogobou no agohimo wa shimenakute wa ikemasen.
+Từ vựng trong câu:Từ vựng trong câu: * ほごぼう (hogobou): Mũ bảo hộ / nón bảo hiểm
+
+あごひも (agohimo): Quai mũ / dây cằm
+しめなくてはいけません (shimenakute wa ikemasen): Bắt buộc phải cài / thắt chặt
+Tiếng Việt:Tiếng Việt: Quai nón bảo hộ thì phải gài lại.
+18. (○)
+
+Tiếng Nhật:Tiếng Nhật: まるのこばんはつかうまえに てんけんをします。
+Chữ Romaji:Chữ Romaji: Maru no kohan wa tsukau mae ni tenkenshimasu.
+Tiếng Việt:Tiếng Việt: Máy cắt kiểm tra trước khi sử dụng.
+19. (○)
+
+Tiếng Nhật:Tiếng Nhật: けんちくこうじげんぱではつねに せいりせいとんを して あんぜんに さぎょうをしなければなりません。
+Chữ Romaji:Chữ Romaji: Kenchikukouji genba dewa tsuneni seiriseiton wo shite anzen ni sagyou wo shinakereba narimasen.
+Từ vựng trong câu:Từ vựng trong câu: * けんちくこうじ (kenchikouji): Công trình xây dựng dân dụng
+
+つねに (tsuneni): Luôn luôn / thường xuyên
+せいりせいとん (seiriseiton): Thu dọn ngăn nắp (Sàng lọc - Sắp xếp trong 5S)
+しなければなりません (shinakereba narimasen): Bắt buộc phải làm
+Tiếng Việt:Tiếng Việt: Ở công trình xây dựng thì phải làm an toàn, gọn gàng, ngăn nắp.
+20. (×)
+
+Tiếng Nhật:Tiếng Nhật: でんきのスイッチにはぬれたてでさわってもよいです。
+Chữ Romaji:Chữ Romaji: Denki no suitchi niwa nureta te de sawattemo yoi desu.
+Từ vựng trong câu:Từ vựng trong câu: * でんきのスイッチ (denki no suitchi): Công tắc điện
+
+ぬれたて (nureta te): Tay ướt
+さわってもよい (sawattemo yoi): Chạm vào cũng được
+Tiếng Việt:Tiếng Việt: Tay ướt sờ vào công tắc điện cũng được.
+--- PAGE 13 ---
+(Tiêu đề phụ: 型枠学科試験問題集 - Toàn bộ 18 trang 6 đề)(Tiêu đề phụ: 型枠学科試験問題集 - Toàn bộ 18 trang 6 đề)
+
+01. (×)
+
+Tiếng Nhật: これは フォームタイです。
+Chữ Romaji: Kore wa fomutai desu.
+Từ vựng trong câu: (Hình minh họa thực tế là giàn giáo khung hoàn thiện)
+Tiếng Việt: Cái này là fo-mutai.
+02. (○)
+
+Tiếng Nhật: これはねがらみクランプです。
+Chữ Romaji: Kore wa negarami-kurampu desu.
+Tiếng Việt:Tiếng Việt: Cái này là negarami-kurampu.
+03. (×)
+
+Tiếng Nhật: レベルはかたについでもちます。
+Chữ Romaji: Reberu wa kata ni tsuide mochimasu.
+Từ vựng trong câu: * かた (kata): Vai
+
+もちます (mochimasu): Mang / vác / cầm
+Tiếng Việt: Thước thủy thì mang trên vai.
+04.
+
+Tiếng Nhật:Tiếng Nhật: これはわくぐみあしばです。
+Chữ Romaji:Chữ Romaji: Kore wa wakugumi-ashiba desu.
+Tiếng Việt:Tiếng Việt: Cái này là dàn giáo khung.
+05. (×)
+
+Tiếng Nhật:Tiếng Nhật: ごうはんせいかたわくはくりかえし つかいません。
+Chữ Romaji:Chữ Romaji: Gouhansei-katawaku wa kurikaeshi tsukaimasen.
+Tiếng Việt:Tiếng Việt: Ván cốp pha không sử dụng lại.
+--- PAGE 14 ---
+06. (×)
+
+Tiếng Nhật:Tiếng Nhật: きんぞくせいかたわくにははくりざいをぬらなくてもよいです。
+Chữ Romaji:Chữ Romaji: Kinzokusei-katawaku niwa hakurizai wo nuranakutemo yoi desu.
+Tiếng Việt:Tiếng Việt: Không bôi thuốc chống dính vữa vào cốp pha kim loại cũng được.
+07.
+
+Tiếng Nhật:Tiếng Nhật: ごうはんパネルの 3×6とは はば900mm ながさ 1,800mmのすんぼうを いいます。
+Chữ Romaji:Chữ Romaji: Gouhan paneru no 3x6 towa haba 900mm nagasa 1,800mm no sumpou wo iimasu.
+Tiếng Việt:Tiếng Việt: Ván cốp pha 3x6 còn gọi là có kích thước chiều rộng 900mm chiều dài là 1,800mm
+08. (×)
+
+Tiếng Nhật:Tiếng Nhật: おおがたパネルの したごしらえはくぎをすくなくしてうちます。
+Chữ Romaji:Chữ Romaji: Oogata-paneru no shita-goshirae wa kugi wo sukunakushite uchimasu.
+Từ vựng trong câu:Từ vựng trong câu: * おおがたパネル (oogata-paneru): Tấm cốp pha khổ lớn
+
+すくなくして (sukunaku shite): Làm cho ít đi / giảm bớt
+Tiếng Việt:Tiếng Việt: Bước đầu tiên làm cốp pha lớn thì đóng ít đinh.
+09. (○)
+
+Tiếng Nhật:Tiếng Nhật: はくりざいをぬるときはゆかにシートなどを しきます。
+Chữ Romaji:Chữ Romaji: Hakurizai wo nuru toki wa yuka ni shi-to nado wo shimasu.
+Tiếng Việt:Tiếng Việt: Khi bôi thuốc chống dính vữa thì trải bạt dưới sàn nhà.
+10. (×)
+
+Tiếng Nhật:Tiếng Nhật: かたわくは すきまがあるように くみたてます。
+Chữ Romaji:Chữ Romaji: Katawaku wa sukima ga aru youni kumitatemasu.
+Tiếng Việt:Tiếng Việt: Lắp cốp pha thì chừa khe hở.
+11. (×)
+
+Tiếng Nhật:Tiếng Nhật: パイプサポートは ちょくせつ コンパネ (かたわくごうはん)をささえます。
+Chữ Romaji:Chữ Romaji: Paipu-sapo-to wa chokusetsu kompane (katawaku-gouhan) wo sasaemasu.
+Tiếng Việt:Tiếng Việt: Paipusapo-to (Thép chống đỡ) thì chống trực tiếp vào ván cốp pha.
+12. (○)
+
+Tiếng Nhật:Tiếng Nhật: がいへきパネルのしたにはしきばたをつかいます。
+Chữ Romaji:Chữ Romaji: Gaiheki-paneru no shita niwa shikibata wo tsukaimasu.
+Tiếng Việt:Tiếng Việt: Sử dụng shikibata lót dưới cốp pha phía tường bên ngoài
+13. (○)
+
+Tiếng Nhật:Tiếng Nhật: パイプサポートをななめにたてるときは あしもとがうごかないように します。
+Chữ Romaji:Chữ Romaji: Paipu-sapo-to wo naname ni tateru toki wa ashimoto ga ugokanai youni shimasu.
+Từ vựng trong câu:Từ vựng trong câu: * ななめに (naname ni): Nghiêng / chéo góc
+
+あしもと (ashimoto): Phần chân / vị trí đặt chân
+うごかないように (ugokanai youni): Để không bị xê dịch / không di chuyển
+Tiếng Việt:Tiếng Việt: Khi dựng nghiêng paipusapo-to thì dựng sao cho chân cây chống không bị dịch chuyển.
+14. (×)
+
+Tiếng Nhật:Tiếng Nhật: かいたいで さんぎはおってもかまいません。
+Chữ Romaji:Chữ Romaji: Kaitai de sangi wa ottemo kamaimasen.
+Từ vựng trong câu:Từ vựng trong câu: * おっても (ottemo): Có bẻ gãy / làm gãy
+
+かまいません (kamaimasen): Không sao / không thành vấn đề
+Tiếng Việt:Tiếng Việt: Thanh gỗ lúc tháo dỡ bẻ gãy cũng không sao
+--- PAGE 15 ---
+15.
+
+Tiếng Nhật:Tiếng Nhật: コンクリートは こおらせてはいけません。
+Chữ Romaji:Chữ Romaji: Konkuri-to wa koorasete wa ikemasen.
+Từ vựng trong câu:Từ vựng trong câu: * こおらせてはいけません (koorasete wa ikemasen): Không được làm cho đóng băng / đông đá
+Tiếng Việt:Tiếng Việt: Vữa bê tông không được làm đông lạnh lại.
+16.
+
+Tiếng Nhật:Tiếng Nhật: コンパネ(ごうはんぱねる)は2×6 (600mm×1800mm) と 3×6 (900mm×1800mm)がおおくつかわれます。
+Chữ Romaji:Chữ Romaji: Konpane (gouhanpaneru) wa 2x6 (600mmx1800mm) to 3x6 (900mmx1800mm) ga ooku tsukawaremasu.
+Từ vựng trong câu:Từ vựng trong câu: * 2×6 (nirokku): Khổ ván rộng 600mm x dài 1800mm
+Tiếng Việt:Tiếng Việt: Ván cốp pha 2×6 (600mm×1800mm) và ván 3×6 (900mm×1800mm) thường được sử dụng nhiều.
+17. (○)
+
+Tiếng Nhật:Tiếng Nhật: かたわくをくみたてるときはほごぼうをかぶります。
+Chữ Romaji:Chữ Romaji: Katawaku wo kumitateru toki wa hogobou wo kaburimasu.
+Từ vựng trong câu:Từ vựng trong câu: * かぶります (kaburimasu): Đội (mũ)
+Tiếng Việt:Tiếng Việt: Khi lắp cốp pha thì đội mũ bảo hộ.
+18. (×)
+
+Tiếng Nhật:Tiếng Nhật: まるのこばんをつかうときはてぶくろをします。
+Chữ Romaji:Chữ Romaji: Maruno-koban wo tsukau toki wa tebukuro wo shimasu.
+Tiếng Việt:Tiếng Việt: Khi dùng máy maruno-koban thì đeo bao tay.
+19. (×)
+
+Tiếng Nhật:Tiếng Nhật: けいたいようまるのこは じぶんのものであれば しょうまえ てんけんは ひつよう ありません。
+Chữ Romaji:Chữ Romaji: Keitaiyou-marunoko wa jibun no mono de areba shiyou mae tenken wa hitsuyou arimasen.
+Tiếng Việt:Tiếng Việt: Lưỡi cắt cầm tay nếu là vật của mình thì trước khi sử dụng không cần kiểm tra.
+20. (○)
+
+Tiếng Nhật:Tiếng Nhật: ほごぐをつけてさぎょうがしにくいときでも ほごぐはつけて さぎょう します。
+Chữ Romaji:Chữ Romaji: Hogoku wo tsukete sagyou ga shinikui toki demo hogogu wa tsukete sagyou shimasu.
+Tiếng Việt:Tiếng Việt: Dẫu cho mặc đồ bảo hộ có bị vướng thì cũng phải mặc rồi làm.
+--- PAGE 16 ---
+01.
+
+Tiếng Nhật:Tiếng Nhật: これは ラチェットレンチです。
+Chữ Romaji:Chữ Romaji: Kore wa rachetto-renchi desu.
+Từ vựng trong câu:Từ vựng trong câu: * ラチェットレンチ (rachetto-renchi): Cờ lê bánh cóc / tuýp đuôi chuột (Ratchet wrench)
+Tiếng Việt:Tiếng Việt: Cái này là cờ lê cây xiết ốc
+02.
+
+Tiếng Nhật: レベルはすいへいをだすときにつかいます。
+Chữ Romaji: Reberu wa suihei wo dasu toki ni tsukaimasu.
+Tiếng Việt:Tiếng Việt: Thước thủy dùng khi đo độ cân bằng
+03. (○)
+
+Tiếng Nhật: ラッチェットレンチは ばんせんを しめるときもつかいます。
+Chữ Romaji: Rachetto-rennchi wa bansen wo shimeru tokimo tsukaimasu.
+Từ vựng trong câu:Từ vựng trong câu: * ばんせん (bansen): Dây kẽm chì / kẽm buộc loại dày
+Tiếng Việt:Tiếng Việt: Cờ lê cũng dùng khi xiết dây kẽm
+04. (×)
+
+Tiếng Nhật: とそうごうはんには はくりざいはつかいません。
+Chữ Romaji: Tosou-gouhan niwa hakurizai wa tsukaimasen.
+Tiếng Việt:Tiếng Việt: Thuốc dùng chống dính vữa thì không dùng cho ván ép sơn.
+05. (×)
+
+Tiếng Nhật:Tiếng Nhật: ごうはんせいかたわくときんぞくせいかたわくは いっしょにつかえません。
+Chữ Romaji:Chữ Romaji: Gouhansei-katawaku to kinzokusei-katawaku wa isshoni tsukaemasen.
+Tiếng Việt:Tiếng Việt: Cốp pha bằng gỗ và cốp pha kim loại không thể sử dụng chung
+06. (×)
+
+Tiếng Nhật:Tiếng Nhật: フラットデッキプレートははしらかたわくにつかいます。
+Chữ Romaji:Chữ Romaji: Furatto-dekki-pureito wa hashira-katawaku ni tsukaimasu.
+Tiếng Việt:Tiếng Việt: Sàn deck thì dùng cho cốp pha cột.
+07. (×)
+
+Tiếng Nhật:Tiếng Nhật: かたわくよう ばたかくは 130mm×130mmかくです。
+Chữ Romaji:Chữ Romaji: Katawaku you batakaku wa 130mm X 130mm kaku desu.
+Từ vựng trong câu:Từ vựng trong câu: * ばたかく (batakaku): Gỗ hộp xà gồ vuông
+
+かく (kaku): Hình vuông / góc cạnh vuông
+Tiếng Việt:Tiếng Việt: Xà gỗ vuông dùng cho cốp pha có kích thước là 130mm × 130mm.
+08.
+
+Tiếng Nhật:Tiếng Nhật: コンパネ (かたわくごうはん)はできるだけきらないようにつかいます。
+Chữ Romaji:Chữ Romaji: Kompane (katawaku-gouhan) wa dekirudake kiranai youni tsukaimasu.
+Từ vựng trong câu:Từ vựng trong câu: * できるだけ (dekirudake): Trong khả năng có thể / cố gắng tối đa
+
+きらないように (kiranai youni): Để không phải cắt rời
+Tiếng Việt:Tiếng Việt: Ván cốp pha sử dụng sao cho không phải cắt nhiều.
+--- PAGE 17 ---
+09.
+
+Tiếng Nhật:Tiếng Nhật: したごしらえは かこうちょうをみてそのとおりにつくります。
+Chữ Romaji:Chữ Romaji: Shitagoshirae wa kakouchou wo mite sonotoori ni tsukurimasu.
+Từ vựng trong câu:Từ vựng trong câu: * かこうちょう (kakouchou): Sổ tay gia công / bản liệt kê kích thước cấu kiện
+
+そのとおりに (sonotoori ni): Đúng theo như vậy
+Tiếng Việt:Tiếng Việt: Bước đầu chuẩn bị dựng cốp pha thì làm theo bản vẽ.
+10. (×)
+
+Tiếng Nhật:Tiếng Nhật: パイプサポートのすいへいつなぎは たかさ 3mごとにとりつけます。
+Chữ Romaji:Chữ Romaji: Paipu-sapooto no suihei-tsunagi wa takasa 3m goto ni toritsukemasu.
+Tiếng Việt:Tiếng Việt: Thanh giằng ngang của cây chống sàn lắp ở độ cao cứ mỗi 3m
+11.
+
+Tiếng Nhật: パイプサポートをつnaiでつかうときは 2ほんまでとします。
+Chữ Romaji: Paipu-sapooto wo tsunaide tsukau toki wa 2hon made toshimasu.
+Tiếng Việt:Tiếng Việt: Khi nối cây chống sàn thì chỉ nối đến 2 cây.
+12. (×)
+
+Tiếng Nhật:Tiếng Nhật: はしらのかたわくくみたてはてっきんをくみたてるまえにくみたてます。
+Chữ Romaji:Chữ Romaji: Hashira no katawaku kumitate wa tekkin wo kumitateru mae ni kumitatemasu.
+Từ vựng trong câu:Từ vựng trong câu: * まえに (mae ni): Trước khi...
+Tiếng Việt:Tiếng Việt: Lắp cốp pha cột thì lắp cốp pha trước khi lắp cốt thép.
+13. (×)
+
+Tiếng Nhật:Tiếng Nhật: パネルと パネルuを くぎでとめるときはかならず くぎはうちこんで しまいます。
+Chữ Romaji:Chữ Romaji: Paneru to paneru wo kugi de tomeru toki wa kanarazu kugi wa uchikonde shimaimasu.
+Tiếng Việt:Tiếng Việt: Khi đóng ván cốp pha với ván cốp pha bằng đinh thì nhất định phải đóng hết cây đinh vào.
+14. (×)
+
+Tiếng Nhật:Tiếng Nhật: かいたいで パイプサポートが じゃまなときは、パイプサポートをはずして かいたいします。
+Chữ Romaji:Chữ Romaji: Kaitai de paipu-sapooto ga jamana toki wa, paipu-sapooto wo hazushite kaitaishimasu.
+Từ vựng trong câu:Từ vựng trong câu: * じゃまなとき (jamana toki): Khi gây vướng víu / cản trở
+
+はずして (hazushite): Tháo rời / bỏ ra ngoài
+Tiếng Việt:Tiếng Việt: Những cây chống sàn gây cản trở lúc tháo dỡ thì tháo cây chống sàn trước rồi tiến hành tháo dỡ cốp pha.
+15. (×)
+
+Tiếng Nhật:Tiếng Nhật: コンクリートはなるべくはやく かんそうさせたほうがよいです。
+Chữ Romaji:Chữ Romaji: Konkurito wa narubeku hayaku kansou saseta houga yoidesu.
+Từ vựng trong câu:Từ vựng trong câu: * かんそうさせた (kansou saseta): Làm cho khô ráo / bốc hơi nước
+Tiếng Việt:Tiếng Việt: Vữa bê tông nên cố gắng làm khô nhanh.
+16. (×)
+
+Tiếng Nhật:Tiếng Nhật: かたわくようのさんぎには、ヨコ27mm×タテ 65mmのさんぎをよくつかいます。
+Chữ Romaji:Chữ Romaji: Katawaku you no sangi niwa, yoko 27mm tate 65mm no sangi wo yoku tsukaimasu.
+Từ vựng trong câu:Từ vựng trong câu: * ヨコ (yoko): Chiều ngang
+
+タテ (tate): Chiều dọc / bề đứng
+よくつかいます (yoku tsukaimasu): Thường xuyên sử dụng
+Tiếng Việt:Tiếng Việt: Thanh gỗ dùng cho cốp pha thì thường sử dụng thanh gỗ có chiều ngang 27mm x chiều dọc 65mm
+--- PAGE 18 ---
+17. (×)
+
+Tiếng Nhật:Tiếng Nhật: きゃたつをつかってさぎょうをするときはきゃたつの いちばんうえに たってもよいです。
+Chữ Romaji:Chữ Romaji: Kyatatsu wo tsukatte sagyou wo suru toki wa kyatatsu no ichiban ue ni tattemo yoidesu.
+Tiếng Việt:Tiếng Việt: Sử dụng thang xếp chữ A khi làm thì đứng ở trên cùng của thang cũng được.
+18. (○)
+
+Tiếng Nhật:Tiếng Nhật: い移動しきあしば(ローリングタワー)のうえではきゃたつをつかってはいけ ません。
+Chữ Romaji:Chữ Romaji: Idoushiki-ashiba (rorinngu-tawa) no ue dewa kyatatsu wo tsukattewa ikemasen.
+Tiếng Việt:Tiếng Việt: Trên giàn giáo di động không được sử dụng thang xếp chữ A.
+19. (○)
+
+Tiếng Nhật:Tiếng Nhật: ふんじんのでるさぎょうをするときは ぼうじんマスクをつけます。
+Chữ Romaji:Chữ Romaji: Funjin no deru sagyou wo surutoki wa boujin masuku wo tsukemasu.
+Từ vựng trong câu:Từ vựng trong câu: * ふんじん (funjin): Bụi bặm / bụi mịn công trường
+
+ぼうじんマスク (boujin masuku): Khẩu trang chống bụi (chuyên dụng)
+Tiếng Việt:Tiếng Việt: Khi làm ở chỗ có bụi thì đeo khẩu trang chống bụi.
+20. (○)
+
+Tiếng Nhật:Tiếng Nhật: きょうどうさぎょうのときはこえをかけあってさぎょうします。
+Chữ Romaji:Chữ Romaji: Kyoudousagyou no toki wa koe wo kakeatte sagyou shimasu.
+Từ vựng trong câu:Từ vựng trong câu: * きょうどうさぎょう (kyoudousagyou): Làm việc nhóm / hợp tác chung
+
+こえをかけあって (koe wo kakeatte): Hô hào gọi nhau / xác nhận bằng giọng nói
+Tiếng Việt:Tiếng Việt: Khi làm chung thì bảo nhau rồi làm.
