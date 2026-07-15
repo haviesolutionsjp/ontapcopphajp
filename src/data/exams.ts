@@ -711,7 +711,7 @@ export const exams: Exam[] = [
             vi: "Để có thể sử dụng lại nhiều lần",
           },
         ],
-        "X",
+        "O",
         "Tiết kiệm vật liệu là nguyên tắc cốt lõi trong thi công mộc Nhật Bản. Hệ panel cần được module hóa chuẩn để tái sử dụng nhiều lần.",
       ),
       q(
