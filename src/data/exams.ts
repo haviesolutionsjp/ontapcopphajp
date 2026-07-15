@@ -176,7 +176,7 @@ export const exams: Exam[] = [
           { jp: "ひとくみ", reading: "hitokumi", vi: "Một nhóm / một cặp" },
           { jp: "ほう が よい", reading: "hou ga yoi", vi: "Nên / tốt hơn là..." },
         ],
-        "O",
+        "X",
         "Máy cưa đĩa cắt nhanh nguy hiểm yêu cầu một người kiểm soát độc lập. Hai người đẩy chung dễ lệch nhịp, kẹt đĩa cưa bắn phản lực (Kickback).",
       ),
       q(
