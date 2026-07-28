@@ -3,6 +3,9 @@ export type VocabItem = {
   jp: string;
   romaji: string;
   vi: string;
+  kanji?: string;
+  hanviet?: string;
+  group?: string;
 };
 
 export const vocabularyList: VocabItem[] = [
@@ -274,3 +277,6 @@ export const vocabularyList: VocabItem[] = [
   { id: 196, jp: "しようまえてんけん", romaji: "Shiyō-mae tenken", vi: "Kiểm tra trước khi dùng" },
   { id: 197, jp: "しにくいときでも", romaji: "Shinikui toki demo", vi: "Ngay cả khi khó làm" },
 ];
+
+export const vocabList = vocabularyList;
+
