@@ -69,10 +69,27 @@ export async function POST(request: Request) {
         </html>
       `;
 
+      const textContent = `Xin chào ${displayName}!
+
+Chào mừng bạn đã đăng ký thành công tài khoản trên hệ thống Ôn Thi Cốp Pha Nhật Bản (型枠施工).
+
+Những tính năng bạn có thể sử dụng ngay:
+- Luyện thi trắc nghiệm ○/×: Bộ đề thi chuẩn 6 đề thi giai đoạn 1 với đồng hồ đếm ngược.
+- Học từ vựng chuyên ngành: Danh mục từ vựng Cốp pha có phát âm audio TTS tiếng Nhật.
+- Theo dõi tiến độ: Lưu lại kết quả bài thi và lịch sử ôn tập tự động.
+
+Truy cập hệ thống ngay: https://ontapcopphajp.vercel.app
+
+Chúc bạn ôn tập thật tốt và đạt kết quả cao trong kỳ thi!
+---
+Hệ thống Ôn Thi Cốp Pha Nhật Bản (${gmailUser})`;
+
       await transporter.sendMail({
         from: `"Ôn Thi Cốp Pha Nhật Bản" <${gmailUser}>`,
         to: email,
-        subject: "🎉 Chào mừng bạn đến với Ôn Thi Cốp Pha Nhật Bản (型枠施工)",
+        replyTo: gmailUser,
+        subject: "Chào mừng bạn đến với Ôn Thi Cốp Pha Nhật Bản (型枠施工)",
+        text: textContent,
         html: htmlContent,
       });
 
