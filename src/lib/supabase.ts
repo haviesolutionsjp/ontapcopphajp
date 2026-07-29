@@ -1,10 +1,11 @@
-import { createClient, User } from "@supabase/supabase-js";
+import { createBrowserClient } from "@supabase/ssr";
+import { User } from "@supabase/supabase-js";
 import { exams } from "@/data/exams";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://gsiqvnlrqpopunrrktsz.supabase.co";
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "sb_publishable_1AJGBqA60AE8_qSUHTc6yQ_V54lihUR";
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+export const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey);
 
 export interface UserProfile {
   id: string;
@@ -52,23 +53,59 @@ export async function signOutUser() {
 }
 
 /**
- * Sync user profile into 'profiles' table
+ * Sync user profile into 'profiles' table and send welcome email for first-time users
  */
 export async function syncUserProfile(user: User) {
-  if (!user) return;
+  if (!user || !user.email) return;
   try {
+    const displayName = user.user_metadata?.full_name || user.user_metadata?.name || user.email.split("@")[0] || "Thực tập sinh";
+    const storageKey = `welcome_sent_${user.id}`;
+    const alreadySentLocally = typeof window !== "undefined" && localStorage.getItem(storageKey);
+
+    // Try checking if profile already exists in Supabase
+    let isNewUser = false;
+    if (!alreadySentLocally) {
+      const { data: existingProfile } = await supabase
+        .from("profiles")
+        .select("id, welcome_email_sent")
+        .eq("id", user.id)
+        .maybeSingle();
+
+      if (!existingProfile || !existingProfile.welcome_email_sent) {
+        isNewUser = true;
+      }
+    }
+
+    // Upsert user profile
     const { error } = await supabase.from("profiles").upsert(
       {
         id: user.id,
-        display_name: user.user_metadata?.full_name || user.email?.split("@")[0] || "Thực tập sinh",
+        display_name: displayName,
         email: user.email,
-        avatar_url: user.user_metadata?.avatar_url || null,
+        avatar_url: user.user_metadata?.avatar_url || user.user_metadata?.picture || null,
+        welcome_email_sent: true,
         updated_at: new Date().toISOString(),
       },
       { onConflict: "id" }
     );
+
     if (error) {
-      console.warn("Notice syncing profile (make sure 'profiles' table exists in Supabase):", error.message || error);
+      console.warn("Notice syncing profile:", error.message || error);
+    }
+
+    // Trigger welcome email if first-time user
+    if (isNewUser && !alreadySentLocally) {
+      if (typeof window !== "undefined") {
+        localStorage.setItem(storageKey, "true");
+      }
+      fetch("/api/welcome-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: user.email,
+          name: displayName,
+        }),
+      }).catch((err) => console.warn("Welcome email request error:", err));
     }
   } catch (err: any) {
     console.warn("Failed to sync profile:", err?.message || err);
