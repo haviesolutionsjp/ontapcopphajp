@@ -34,17 +34,18 @@ export default function QuizPage({ params }: { params: Promise<{ examId: string 
       if (!exam) return;
       stopSpeak();
       const finishedAt = Date.now();
+      const { data: { user } } = await supabase.auth.getUser();
       const payload = {
         examId: exam.id,
         answers: finalAnswers,
         finishedAt,
+        synced: Boolean(user),
       };
       if (typeof window !== "undefined") {
         sessionStorage.setItem(`quiz:${exam.id}`, JSON.stringify(payload));
       }
 
       // Save to Supabase DB if user is logged in
-      const { data: { user } } = await supabase.auth.getUser();
       if (user) {
         let correct = 0;
         exam.questions.forEach((q, i) => {

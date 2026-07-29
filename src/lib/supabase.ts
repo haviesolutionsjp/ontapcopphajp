@@ -137,42 +137,59 @@ export async function saveExamResult(userId: string, data: Omit<ExamHistoryItem,
   }
 }
 /**
- * Sync any completed exam results stored in sessionStorage into Supabase database
+ * Sync any completed exam results stored in sessionStorage into Supabase database once
  */
 export async function syncSessionStorageExamResults(userId: string) {
   if (typeof window === "undefined" || !userId) return;
   try {
+    const keysToRemove: string[] = [];
     for (let i = 0; i < sessionStorage.length; i++) {
       const key = sessionStorage.key(i);
       if (key && key.startsWith("quiz:")) {
         const raw = sessionStorage.getItem(key);
         if (!raw) continue;
-        const parsed = JSON.parse(raw);
-        const exam = exams.find((e) => e.id === parsed.examId);
-        if (!exam) continue;
 
-        const answers: Array<"O" | "X" | null> = parsed.answers || [];
-        let correct = 0;
-        exam.questions.forEach((q, idx) => {
-          if (answers[idx] === q.answer) correct += 1;
-        });
-        const total = exam.questions.length;
-        const passThreshold = total === 20 ? 16 : Math.ceil(total * 0.8);
-        const scorePct = Math.round((correct / total) * 100);
-        const finishedAt = parsed.finishedAt || Date.now();
+        try {
+          const parsed = JSON.parse(raw);
+          // If already synced during quiz completion, just clean up sessionStorage
+          if (parsed.synced) {
+            keysToRemove.push(key);
+            continue;
+          }
 
-        await saveExamResult(userId, {
-          exam_id: exam.id,
-          exam_title: exam.title,
-          score: correct,
-          total,
-          passed: correct >= passThreshold,
-          score_pct: scorePct,
-          answers,
-          finished_at: finishedAt,
-        });
+          const exam = exams.find((e) => e.id === parsed.examId);
+          if (exam) {
+            const answers: Array<"O" | "X" | null> = parsed.answers || [];
+            let correct = 0;
+            exam.questions.forEach((q, idx) => {
+              if (answers[idx] === q.answer) correct += 1;
+            });
+            const total = exam.questions.length;
+            const passThreshold = total === 20 ? 16 : Math.ceil(total * 0.8);
+            const scorePct = Math.round((correct / total) * 100);
+            const finishedAt = parsed.finishedAt || Date.now();
+
+            await saveExamResult(userId, {
+              exam_id: exam.id,
+              exam_title: exam.title,
+              score: correct,
+              total,
+              passed: correct >= passThreshold,
+              score_pct: scorePct,
+              answers,
+              finished_at: finishedAt,
+            });
+          }
+        } catch {
+          // ignore JSON parse error
+        }
+
+        keysToRemove.push(key);
       }
     }
+
+    // Clean up processed keys to prevent re-insertion on refresh
+    keysToRemove.forEach((k) => sessionStorage.removeItem(k));
   } catch (err) {
     console.warn("Failed to sync sessionStorage exam results:", err);
   }
@@ -197,7 +214,18 @@ export async function getUserExamHistory(userId: string): Promise<ExamHistoryIte
       return [];
     }
 
-    return (data as ExamHistoryItem[]) || [];
+    const items = (data as ExamHistoryItem[]) || [];
+
+    // Deduplicate items by finished_at timestamp & exam_id to prevent duplicates from past reloads
+    const uniqueMap = new Map<string, ExamHistoryItem>();
+    for (const item of items) {
+      const key = `${item.exam_id}_${item.finished_at}`;
+      if (!uniqueMap.has(key)) {
+        uniqueMap.set(key, item);
+      }
+    }
+
+    return Array.from(uniqueMap.values());
   } catch (err) {
     console.error("Error fetching history:", err);
     return [];
