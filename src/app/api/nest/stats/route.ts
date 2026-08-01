@@ -27,14 +27,21 @@ export async function GET() {
   const totalQuestions = all.reduce((acc, e) => acc + (e.questions?.length || 0), 0);
   const customQuestions = custom.reduce((acc, e) => acc + (e.questions?.length || 0), 0);
 
-  return NextResponse.json({
-    totalExams: all.length,
-    defaultExamsCount: defaultExams.length,
-    customExamsCount: custom.length,
-    totalQuestions,
-    customQuestions,
-    supportedFormats: [".pdf", ".doc", ".docx", ".txt"],
-    nestjsStatus: "Online",
-    timestamp: new Date().toISOString(),
-  });
+  return NextResponse.json(
+    {
+      totalExams: all.length,
+      defaultExamsCount: defaultExams.length,
+      customExamsCount: custom.length,
+      totalQuestions,
+      customQuestions,
+      supportedFormats: [".pdf", ".doc", ".docx", ".txt"],
+      nestjsStatus: "Online",
+      timestamp: new Date().toISOString(),
+    },
+    {
+      headers: {
+        "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
+      },
+    }
+  );
 }

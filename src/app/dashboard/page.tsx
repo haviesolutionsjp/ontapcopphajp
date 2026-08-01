@@ -539,7 +539,7 @@ export default function NestJSDashboardPage() {
             <div className="flex items-center gap-3">
               <div className="h-6 w-1 bg-indigo-500 rounded-full" />
               <h2 className="text-xl font-bold text-white tracking-tight">
-                Danh sách Đề thi trong hệ thống NestJS Dashboard ({exams.length})
+                Danh sách Đề thi trong hệ thống có sẵn ({exams.length})
               </h2>
             </div>
           </div>

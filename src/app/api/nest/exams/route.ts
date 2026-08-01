@@ -34,7 +34,11 @@ export async function GET() {
   const map = new Map<string, Exam>();
   defaultExams.forEach((e) => map.set(e.id, e));
   custom.forEach((e) => map.set(e.id, e));
-  return NextResponse.json(Array.from(map.values()));
+  return NextResponse.json(Array.from(map.values()), {
+    headers: {
+      "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
+    },
+  });
 }
 
 export async function POST(req: NextRequest) {

@@ -1,6 +1,22 @@
 import type { Metadata } from "next";
+import { Plus_Jakarta_Sans, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
+import { AuthProvider } from "@/context/auth-context";
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const notoSansJp = Noto_Sans_JP({
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
+  variable: "--font-jp",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Ôn Thi Cốp Pha Nhật Bản - Chuyển Giai Đoạn 1 (型枠)",
@@ -8,16 +24,14 @@ export const metadata: Metadata = {
   keywords: ["cốp pha", "luyện thi cốp pha", "型枠", "chuyển giai đoạn 1", "từ vựng cốp pha", "luyện thi nhật bản"],
 };
 
-import { AuthProvider } from "@/context/auth-context";
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi">
-      <body className="min-h-screen bg-slate-50/70 text-slate-900 antialiased selection:bg-indigo-500 selection:text-white flex flex-col">
+    <html lang="vi" className={`${plusJakarta.variable} ${notoSansJp.variable}`}>
+      <body className={`${plusJakarta.className} min-h-screen bg-slate-50/70 text-slate-900 antialiased selection:bg-indigo-500 selection:text-white flex flex-col`}>
         <AuthProvider>
           <Navbar />
           <div className="flex-1">{children}</div>
