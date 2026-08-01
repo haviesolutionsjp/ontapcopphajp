@@ -57,13 +57,15 @@ export default function HomePage() {
 
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6">
           <div className="flex flex-col items-center text-center space-y-6">
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center justify-center gap-2">
               <Badge className="bg-indigo-500/20 text-indigo-300 border-indigo-500/30 px-3 py-1 text-xs font-semibold backdrop-blur-md rounded-full">
                 ✨ Cập nhật bộ đề thi chuẩn mới nhất 2026
               </Badge>
-              <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30 px-3 py-1 text-xs font-semibold backdrop-blur-md rounded-full">
-                🚀 Dashboard Upload PDF/DOC
-              </Badge>
+              {isAdmin && (
+                <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30 px-3 py-1 text-xs font-semibold backdrop-blur-md rounded-full">
+                  🚀 Dashboard Upload PDF/DOC
+                </Badge>
+              )}
             </div>
 
             <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-tight max-w-3xl">
@@ -159,37 +161,33 @@ export default function HomePage() {
       </div>
 
       <main className="mx-auto max-w-5xl px-4 py-12 space-y-12">
-        {/* NestJS Upload Callout Banner */}
-        <section className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl border border-indigo-500/30 relative overflow-hidden">
-          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="space-y-2 text-center md:text-left">
-              <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30">
-                ✨ Tính năng mới: NestJS Document Parser
-              </Badge>
-              <h3 className="text-2xl font-black tracking-tight">
-                Tạo đề thi mới tức thì từ File .PDF, .DOC, .DOCX!
-              </h3>
-              <p className="text-slate-300 text-sm max-w-xl">
-                Mỗi khi bạn tải lên 1 file tài liệu tiếng Nhật (.pdf, .doc, .docx), NestJS Dashboard sẽ tự động trích xuất và tạo 1 đề thi giữ nguyên cấu trúc chuẩn (JP, Romaji, Dịch Việt, Từ vựng, Đáp án ○/× & Giải thích).
-              </p>
-            </div>
-            {isAdmin ? (
+        {/* NestJS Upload Callout Banner (Admin Root Only) */}
+        {isAdmin && (
+          <section className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl border border-indigo-500/30 relative overflow-hidden">
+            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="space-y-2 text-center md:text-left">
+                <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30">
+                  ✨ Tính năng Quản trị: NestJS Document Parser
+                </Badge>
+                <h3 className="text-2xl font-black tracking-tight">
+                  Tạo đề thi mới tức thì từ File .PDF, .DOC, .DOCX!
+                </h3>
+                <p className="text-slate-300 text-sm max-w-xl">
+                  Mỗi khi bạn tải lên 1 file tài liệu tiếng Nhật (.pdf, .doc, .docx), NestJS Dashboard sẽ tự động trích xuất và tạo 1 đề thi giữ nguyên cấu trúc chuẩn (JP, Romaji, Dịch Việt, Từ vựng, Đáp án ○/× & Giải thích).
+                </p>
+              </div>
               <Button
                 asChild
                 size="lg"
                 className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold h-12 px-6 rounded-xl shrink-0 shadow-lg shadow-emerald-600/30"
               >
                 <Link href="/dashboard">
-                  <FileUp className="mr-2 h-5 w-5" /> Tải File Ngay (Admin)
+                  <FileUp className="mr-2 h-5 w-5" /> Tải File Ngay (Dashboard)
                 </Link>
               </Button>
-            ) : (
-              <Badge className="bg-slate-800 text-slate-300 border-slate-700 px-3 py-2 text-xs">
-                🔒 Yêu cầu Admin: hvhaqt2021@gmail.com
-              </Badge>
-            )}
-          </div>
-        </section>
+            </div>
+          </section>
+        )}
 
         {/* Rules & Features */}
         <section className="space-y-6">
@@ -287,11 +285,13 @@ export default function HomePage() {
             </div>
             <div className="flex items-center gap-2">
               <span className="text-xs text-slate-500 font-medium">{allExams.length} bộ đề thi</span>
-              <Button asChild size="sm" variant="outline" className="h-8 text-xs border-indigo-200 text-indigo-700 bg-indigo-50 hover:bg-indigo-100">
-                <Link href="/dashboard">
-                  <PlusCircle className="mr-1 h-3.5 w-3.5" /> Thêm đề mới
-                </Link>
-              </Button>
+              {isAdmin && (
+                <Button asChild size="sm" variant="outline" className="h-8 text-xs border-indigo-200 text-indigo-700 bg-indigo-50 hover:bg-indigo-100">
+                  <Link href="/dashboard">
+                    <PlusCircle className="mr-1 h-3.5 w-3.5" /> Thêm đề mới
+                  </Link>
+                </Button>
+              )}
             </div>
           </div>
 
