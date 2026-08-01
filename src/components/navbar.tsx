@@ -22,7 +22,7 @@ export function Navbar() {
 
   const navItems = [
     { href: "/", label: "Trang chủ", icon: Home },
-    ...(isAdmin ? [{ href: "/dashboard", label: "Thêm đề thi (Dashboard)", icon: Server, isAdminOnly: true }] : []),
+    ...(isAdmin ? [{ href: "/dashboard", label: "Dashboard", icon: Server, isAdminOnly: true }] : []),
     { href: "/vocab", label: "Từ vựng (143)", icon: BookOpen },
     { href: "/vocab-quiz", label: "Luyện từ vựng", icon: Sparkles },
     ...(user ? [{ href: "/history", label: "Lịch sử thi", icon: History }] : []),

@@ -94,7 +94,7 @@ export default function HomePage() {
                   className="h-12 px-6 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl shadow-lg shadow-emerald-600/30"
                 >
                   <Link href="/dashboard">
-                    <Server className="mr-2 h-5 w-5" /> NestJS Dashboard (Admin Only)
+                    <Server className="mr-2 h-5 w-5" /> Dashboard Admin
                   </Link>
                 </Button>
               )}
