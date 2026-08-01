@@ -62,7 +62,7 @@ export default function HomePage() {
                 ✨ Cập nhật bộ đề thi chuẩn mới nhất 2026
               </Badge>
               <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30 px-3 py-1 text-xs font-semibold backdrop-blur-md rounded-full">
-                🚀 NestJS Dashboard Upload PDF/DOC
+                🚀 Dashboard Upload PDF/DOC
               </Badge>
             </div>
 
@@ -94,7 +94,7 @@ export default function HomePage() {
                   className="h-12 px-6 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl shadow-lg shadow-emerald-600/30"
                 >
                   <Link href="/dashboard">
-                    <Server className="mr-2 h-5 w-5" /> Dashboard Admin
+                    <Server className="mr-2 h-5 w-5" />Dashboard Admin
                   </Link>
                 </Button>
               )}

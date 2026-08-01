@@ -108,7 +108,7 @@ export function Navbar() {
                     <DropdownMenuItem asChild>
                       <Link href="/dashboard" className="cursor-pointer font-bold text-emerald-700 bg-emerald-50 focus:bg-emerald-100">
                         <Server className="mr-2 h-4 w-4 text-emerald-600" />
-                        <span>Thêm đề thi mới (Dashboard)</span>
+                        <span>Dashboard</span>
                       </Link>
                     </DropdownMenuItem>
                   )}
