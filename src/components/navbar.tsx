@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen, GraduationCap, Home, Sparkles, LogIn, LogOut, History, User as UserIcon } from "lucide-react";
+import { BookOpen, GraduationCap, Home, Sparkles, LogIn, LogOut, History, User as UserIcon, Server } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/auth-context";
@@ -18,10 +18,11 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export function Navbar() {
   const pathname = usePathname();
-  const { user, loginWithGoogle, logout } = useAuth();
+  const { user, isAdmin, loginWithGoogle, logout } = useAuth();
 
   const navItems = [
     { href: "/", label: "Trang chủ", icon: Home },
+    ...(isAdmin ? [{ href: "/dashboard", label: "Thêm đề thi (Dashboard)", icon: Server, isAdminOnly: true }] : []),
     { href: "/vocab", label: "Từ vựng (143)", icon: BookOpen },
     { href: "/vocab-quiz", label: "Luyện từ vựng", icon: Sparkles },
     ...(user ? [{ href: "/history", label: "Lịch sử thi", icon: History }] : []),
@@ -52,6 +53,7 @@ export function Navbar() {
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = pathname === item.href;
+            const isAdminBadge = (item as any).isAdminOnly;
 
             return (
               <Link
@@ -59,12 +61,16 @@ export function Navbar() {
                 href={item.href}
                 className={`flex items-center gap-2 px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ${
                   isActive
-                    ? "bg-indigo-600 text-white shadow-sm shadow-indigo-200"
+                    ? isAdminBadge
+                      ? "bg-emerald-600 text-white shadow-md shadow-emerald-200"
+                      : "bg-indigo-600 text-white shadow-sm shadow-indigo-200"
+                    : isAdminBadge
+                    ? "bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100"
                     : "text-slate-600 hover:bg-slate-100/80 hover:text-slate-900"
                 }`}
               >
-                <Icon className={`h-4 w-4 ${isActive ? "text-white" : "text-slate-500"}`} />
-                <span className="hidden md:inline">{item.label}</span>
+                <Icon className={`h-4 w-4 ${isActive ? "text-white" : isAdminBadge ? "text-emerald-600" : "text-slate-500"}`} />
+                <span>{item.label}</span>
               </Link>
             );
           })}
@@ -75,7 +81,7 @@ export function Navbar() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className="relative h-10 w-10 rounded-full p-0">
-                    <Avatar className="h-9 w-9 border border-indigo-200">
+                    <Avatar className={`h-9 w-9 border ${isAdmin ? "border-emerald-500 ring-2 ring-emerald-500/20" : "border-indigo-200"}`}>
                       <AvatarImage src={user.photoURL || undefined} alt={user.displayName || "User"} />
                       <AvatarFallback className="bg-indigo-100 text-indigo-700 font-bold">
                         {user.displayName ? user.displayName.charAt(0).toUpperCase() : "U"}
@@ -83,14 +89,29 @@ export function Navbar() {
                     </Avatar>
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56" align="end" forceMount>
+                <DropdownMenuContent className="w-60" align="end" forceMount>
                   <DropdownMenuLabel className="font-normal">
                     <div className="flex flex-col space-y-1">
-                      <p className="text-sm font-bold leading-none">{user.displayName || "Thực tập sinh"}</p>
+                      <div className="flex items-center justify-between">
+                        <p className="text-sm font-bold leading-none">{user.displayName || "Thực tập sinh"}</p>
+                        {isAdmin && (
+                          <Badge className="bg-emerald-100 text-emerald-800 text-[10px] px-1.5 py-0 font-bold border border-emerald-200">
+                            👑 Admin Root
+                          </Badge>
+                        )}
+                      </div>
                       <p className="text-xs leading-none text-slate-500 truncate">{user.email}</p>
                     </div>
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
+                  {isAdmin && (
+                    <DropdownMenuItem asChild>
+                      <Link href="/dashboard" className="cursor-pointer font-bold text-emerald-700 bg-emerald-50 focus:bg-emerald-100">
+                        <Server className="mr-2 h-4 w-4 text-emerald-600" />
+                        <span>Thêm đề thi mới (Dashboard)</span>
+                      </Link>
+                    </DropdownMenuItem>
+                  )}
                   <DropdownMenuItem asChild>
                     <Link href="/history" className="cursor-pointer">
                       <History className="mr-2 h-4 w-4 text-indigo-600" />

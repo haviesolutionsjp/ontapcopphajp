@@ -5,6 +5,8 @@ import { User } from "@supabase/supabase-js";
 import { supabase, signInWithGoogle, signOutUser, syncUserProfile } from "@/lib/supabase";
 import { AlertCircle, X } from "lucide-react";
 
+export const ADMIN_ROOT_EMAIL = "hvhaqt2021@gmail.com";
+
 interface AppUser {
   id: string;
   email: string | null;
@@ -15,6 +17,7 @@ interface AppUser {
 
 interface AuthContextType {
   user: AppUser | null;
+  isAdmin: boolean;
   loading: boolean;
   authError: string | null;
   clearAuthError: () => void;
@@ -24,6 +27,7 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType>({
   user: null,
+  isAdmin: false,
   loading: true,
   authError: null,
   clearAuthError: () => {},
@@ -101,10 +105,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
+  const isAdmin = Boolean(
+    user?.email && user.email.toLowerCase() === ADMIN_ROOT_EMAIL.toLowerCase()
+  );
+
   return (
     <AuthContext.Provider
       value={{
         user,
+        isAdmin,
         loading,
         authError,
         clearAuthError: () => setAuthError(null),

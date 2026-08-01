@@ -1,5 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { exams } from "@/data/exams";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -14,9 +16,37 @@ import {
   ArrowRight,
   ShieldCheck,
   Zap,
+  Server,
+  FileUp,
+  PlusCircle,
 } from "lucide-react";
+import { Exam } from "@/data/exams";
+import { getAllExams } from "@/data/exam-store";
+import { useAuth } from "@/context/auth-context";
 
 export default function HomePage() {
+  const { isAdmin } = useAuth();
+  const [allExams, setAllExams] = useState<Exam[]>([]);
+
+  useEffect(() => {
+    // Load local and NestJS custom exams
+    const local = getAllExams();
+    setAllExams(local);
+
+    // Fetch latest from NestJS API
+    fetch("/api/nest/exams")
+      .then((res) => (res.ok ? res.json() : []))
+      .then((apiExams: Exam[]) => {
+        if (Array.isArray(apiExams) && apiExams.length > 0) {
+          const map = new Map<string, Exam>();
+          local.forEach((e) => map.set(e.id, e));
+          apiExams.forEach((e) => map.set(e.id, e));
+          setAllExams(Array.from(map.values()));
+        }
+      })
+      .catch(console.error);
+  }, []);
+
   return (
     <div className="min-h-screen bg-slate-50/50 pb-16">
       {/* Hero Section */}
@@ -27,9 +57,14 @@ export default function HomePage() {
 
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6">
           <div className="flex flex-col items-center text-center space-y-6">
-            <Badge className="bg-indigo-500/20 text-indigo-300 border-indigo-500/30 px-3 py-1 text-xs font-semibold backdrop-blur-md rounded-full">
-              ✨ Cập nhật bộ đề thi chuẩn mới nhất 2026
-            </Badge>
+            <div className="flex items-center gap-2">
+              <Badge className="bg-indigo-500/20 text-indigo-300 border-indigo-500/30 px-3 py-1 text-xs font-semibold backdrop-blur-md rounded-full">
+                ✨ Cập nhật bộ đề thi chuẩn mới nhất 2026
+              </Badge>
+              <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30 px-3 py-1 text-xs font-semibold backdrop-blur-md rounded-full">
+                🚀 NestJS Dashboard Upload PDF/DOC
+              </Badge>
+            </div>
 
             <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-tight max-w-3xl">
               Ôn Thi Chuyển Giai Đoạn 1 <br className="hidden sm:inline" />
@@ -39,7 +74,7 @@ export default function HomePage() {
             </h1>
 
             <p className="max-w-2xl text-base sm:text-xl text-slate-300 leading-relaxed font-normal">
-              Luyện 6 bộ đề thi trắc nghiệm Đúng/Sai (○/×) thực tế tại Nhật Bản. Có âm thanh phát âm tiếng Nhật tự nhiên, bản dịch tiếng Việt và giải thích kỹ thuật chi tiết.
+              Luyện các bộ đề thi trắc nghiệm Đúng/Sai (○/×) thực tế tại Nhật Bản. Hỗ trợ tạo đề tự động khi tải file .PDF / .DOC / .DOCX qua NestJS Dashboard!
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
@@ -52,6 +87,17 @@ export default function HomePage() {
                   Bắt đầu làm bài <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
+              {isAdmin && (
+                <Button
+                  asChild
+                  size="lg"
+                  className="h-12 px-6 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl shadow-lg shadow-emerald-600/30"
+                >
+                  <Link href="/dashboard">
+                    <Server className="mr-2 h-5 w-5" /> NestJS Dashboard (Admin Only)
+                  </Link>
+                </Button>
+              )}
               <Button
                 asChild
                 size="lg"
@@ -75,8 +121,8 @@ export default function HomePage() {
               <ListChecks className="h-6 w-6" />
             </div>
             <div>
-              <div className="text-2xl font-extrabold text-slate-900">6 Đề thi</div>
-              <div className="text-xs text-slate-500 font-medium">Full 120 câu hỏi</div>
+              <div className="text-2xl font-extrabold text-slate-900">{allExams.length || 6} Đề thi</div>
+              <div className="text-xs text-slate-500 font-medium">Bao gồm file upload</div>
             </div>
           </div>
 
@@ -113,6 +159,38 @@ export default function HomePage() {
       </div>
 
       <main className="mx-auto max-w-5xl px-4 py-12 space-y-12">
+        {/* NestJS Upload Callout Banner */}
+        <section className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl border border-indigo-500/30 relative overflow-hidden">
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="space-y-2 text-center md:text-left">
+              <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30">
+                ✨ Tính năng mới: NestJS Document Parser
+              </Badge>
+              <h3 className="text-2xl font-black tracking-tight">
+                Tạo đề thi mới tức thì từ File .PDF, .DOC, .DOCX!
+              </h3>
+              <p className="text-slate-300 text-sm max-w-xl">
+                Mỗi khi bạn tải lên 1 file tài liệu tiếng Nhật (.pdf, .doc, .docx), NestJS Dashboard sẽ tự động trích xuất và tạo 1 đề thi giữ nguyên cấu trúc chuẩn (JP, Romaji, Dịch Việt, Từ vựng, Đáp án ○/× & Giải thích).
+              </p>
+            </div>
+            {isAdmin ? (
+              <Button
+                asChild
+                size="lg"
+                className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold h-12 px-6 rounded-xl shrink-0 shadow-lg shadow-emerald-600/30"
+              >
+                <Link href="/dashboard">
+                  <FileUp className="mr-2 h-5 w-5" /> Tải File Ngay (Admin)
+                </Link>
+              </Button>
+            ) : (
+              <Badge className="bg-slate-800 text-slate-300 border-slate-700 px-3 py-2 text-xs">
+                🔒 Yêu cầu Admin: hvhaqt2021@gmail.com
+              </Badge>
+            )}
+          </div>
+        </section>
+
         {/* Rules & Features */}
         <section className="space-y-6">
           <div className="flex items-center gap-3">
@@ -144,9 +222,9 @@ export default function HomePage() {
                     <CheckCircle2 className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900 text-base">Đạt ≥ 16/20 câu</h3>
+                    <h3 className="font-bold text-slate-900 text-base">Đạt ≥ 80% điểm số</h3>
                     <p className="text-sm text-slate-500 mt-1 leading-relaxed">
-                      Mỗi đề có 20 câu hỏi ○ (Đúng) hoặc × (Sai). Cần trả lời đúng từ 16 câu trở lên.
+                      Mỗi đề có các câu hỏi ○ (Đúng) hoặc × (Sai). Cần trả lời đúng từ 80% trở lên để ĐẠT.
                     </p>
                   </div>
                 </div>
@@ -207,49 +285,63 @@ export default function HomePage() {
               <div className="h-7 w-1.5 bg-indigo-600 rounded-full" />
               <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Danh sách đề thi ôn luyện</h2>
             </div>
-            <span className="text-xs text-slate-500 font-medium">6 bộ đề thi thử</span>
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-slate-500 font-medium">{allExams.length} bộ đề thi</span>
+              <Button asChild size="sm" variant="outline" className="h-8 text-xs border-indigo-200 text-indigo-700 bg-indigo-50 hover:bg-indigo-100">
+                <Link href="/dashboard">
+                  <PlusCircle className="mr-1 h-3.5 w-3.5" /> Thêm đề mới
+                </Link>
+              </Button>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {exams.map((exam, index) => (
-              <Card
-                key={exam.id}
-                className="group relative border-slate-200/80 bg-white hover:border-indigo-300 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between overflow-hidden"
-              >
-                <div className="h-1.5 w-full bg-gradient-to-r from-indigo-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <CardHeader className="pb-4">
-                  <div className="flex items-start justify-between mb-3">
-                    <span className="text-xs font-black uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-lg">
-                      Đề số 0{index + 1}
-                    </span>
-                    <Badge variant="secondary" className="bg-slate-100 text-slate-700 font-semibold">
-                      {exam.questions.length} câu ○/×
-                    </Badge>
-                  </div>
-                  <CardTitle className="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
-                    {exam.title}
-                  </CardTitle>
-                  {exam.subtitle && (
-                    <CardDescription className="line-clamp-2 text-xs text-slate-500 min-h-[2.5rem] mt-1 leading-relaxed">
-                      {exam.subtitle}
-                    </CardDescription>
-                  )}
-                </CardHeader>
+            {allExams.map((exam, index) => {
+              const isCustom = exam.id.startsWith("exam-");
+              return (
+                <Card
+                  key={exam.id}
+                  className="group relative border-slate-200/80 bg-white hover:border-indigo-300 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                >
+                  <div className="h-1.5 w-full bg-gradient-to-r from-indigo-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <CardHeader className="pb-4">
+                    <div className="flex items-start justify-between mb-3">
+                      <span className={`text-xs font-black uppercase tracking-wider px-2.5 py-1 rounded-lg ${
+                        isCustom
+                          ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                          : "bg-indigo-50 text-indigo-600"
+                      }`}>
+                        {isCustom ? "✨ File Upload" : `Đề số 0${index + 1}`}
+                      </span>
+                      <Badge variant="secondary" className="bg-slate-100 text-slate-700 font-semibold">
+                        {exam.questions.length} câu ○/×
+                      </Badge>
+                    </div>
+                    <CardTitle className="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors line-clamp-2">
+                      {exam.title}
+                    </CardTitle>
+                    {exam.subtitle && (
+                      <CardDescription className="line-clamp-2 text-xs text-slate-500 min-h-[2.5rem] mt-1 leading-relaxed">
+                        {exam.subtitle}
+                      </CardDescription>
+                    )}
+                  </CardHeader>
 
-                <CardContent className="pt-0">
-                  <div className="border-t border-slate-100 pt-4 mt-2">
-                    <Button
-                      asChild
-                      className="w-full bg-slate-900 hover:bg-indigo-600 text-white font-bold shadow-md transition-all duration-300 rounded-xl"
-                    >
-                      <Link href={`/quiz/${exam.id}`}>
-                        Bắt đầu thi ngay <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  <CardContent className="pt-0">
+                    <div className="border-t border-slate-100 pt-4 mt-2">
+                      <Button
+                        asChild
+                        className="w-full bg-slate-900 hover:bg-indigo-600 text-white font-bold shadow-md transition-all duration-300 rounded-xl"
+                      >
+                        <Link href={`/quiz/${exam.id}`}>
+                          Bắt đầu thi ngay <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </section>
       </main>

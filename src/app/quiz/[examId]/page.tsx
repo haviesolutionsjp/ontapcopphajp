@@ -14,18 +14,37 @@ import { HighlightedJa } from "@/lib/highlight";
 import { useCountdown } from "@/hooks/useCountdown";
 import { saveExamResult, supabase } from "@/lib/supabase";
 
+import { getExamById, Exam } from "@/data/exam-store";
+
 const DURATION = 30 * 60; // 30 mins
 
 export default function QuizPage({ params }: { params: Promise<{ examId: string }> }) {
   const { examId } = use(params);
   const router = useRouter();
-  const exam = exams.find((e) => e.id === examId);
+  const [exam, setExam] = useState<Exam | null>(() => getExamById(examId) || null);
+
+  useEffect(() => {
+    if (!exam) {
+      fetch(`/api/nest/exams/${examId}`)
+        .then((res) => (res.ok ? res.json() : null))
+        .then((data) => {
+          if (data && data.questions) {
+            setExam(data);
+          }
+        })
+        .catch(console.error);
+    }
+  }, [examId, exam]);
 
   const [started, setStarted] = useState(false);
   const [idx, setIdx] = useState(0);
-  const [answers, setAnswers] = useState<Array<"O" | "X" | null>>(() =>
-    exam ? exam.questions.map(() => null) : []
-  );
+  const [answers, setAnswers] = useState<Array<"O" | "X" | null>>([]);
+
+  useEffect(() => {
+    if (exam && answers.length === 0) {
+      setAnswers(exam.questions.map(() => null));
+    }
+  }, [exam, answers.length]);
   const [showVocabulary, setShowVocabulary] = useState<Record<number, boolean>>({});
   const [showTranslation, setShowTranslation] = useState<Record<number, boolean>>({});
 

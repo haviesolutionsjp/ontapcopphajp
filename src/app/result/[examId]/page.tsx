@@ -11,9 +11,23 @@ import { Volume2, Check, X, Home, RotateCcw, BookOpen, Trophy, Sparkles, AlertCi
 import { speakJa } from "@/lib/tts";
 import { HighlightedJa } from "@/lib/highlight";
 
+import { getExamById, Exam } from "@/data/exam-store";
+
 export default function ResultPage({ params }: { params: Promise<{ examId: string }> }) {
   const { examId } = use(params);
-  const exam = exams.find((e) => e.id === examId);
+  const [exam, setExam] = useState<Exam | null>(() => getExamById(examId) || null);
+
+  useEffect(() => {
+    if (!exam) {
+      fetch(`/api/nest/exams/${examId}`)
+        .then((res) => (res.ok ? res.json() : null))
+        .then((data) => {
+          if (data && data.questions) setExam(data);
+        })
+        .catch(console.error);
+    }
+  }, [examId, exam]);
+
   const [answers, setAnswers] = useState<Array<"O" | "X" | null>>([]);
   const [filterMode, setFilterMode] = useState<"all" | "correct" | "wrong">("all");
 
